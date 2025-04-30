@@ -1,0 +1,101 @@
+@font-face {
+    font-family: opensans;
+    src: url(opensans.woff2);
+}
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    font-family: opensans, Arial, Helvetica, sans-serif;
+}
+section {
+    border: 1px solid #121212;
+    border-radius: 5px;
+    margin: auto;
+    width: 80%;
+    padding: 20px;
+}
+section table {
+    width: 100%;
+}
+section table, th, td {
+    border: 1px solid #121212;
+    border-collapse: collapse;
+}
+section th, td {
+    padding: 10px;
+    text-align: center;
+}
+h1, h2, h3 {
+    text-align: center;
+}
+.inline {
+    display: inline;
+}
+.float-right {
+    float: right;
+}
+.generalButton, .generalButton a {
+    border-radius: 5px;
+    background-color: #121212;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+}
+input {
+    border: 1px solid #121212;
+    border-radius: 5px;
+    width: 10%;
+    height: 3%;
+    font-weight: bold;
+}
+input:read-only {
+    font-weight: normal;
+}
+input[type=submit] {
+    background-color: #121212;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+}
+#visibilidadContrasenia, #visibilidadContrasenia2 {
+    width: 1%;
+    cursor: pointer;
+    position: relative;
+}
+textarea::placeholder {
+    font-family: opensans, Arial, Helvetica, sans-serif;
+}
+header {
+    background-color: #eeeeee;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+footer {
+    text-align: center;
+    color: white;
+    background-color: #121212;
+    padding: 10px;
+    width: 100%;
+    border-radius: 7px;
+}
+footer p {
+    text-align: center;
+    font-size: large;
+}
+footer button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 0.2%;
+    margin-right: 0.2%;
+}
+.hidden {
+    display: none;
+}
+#salida {
+    color: red;
+}
