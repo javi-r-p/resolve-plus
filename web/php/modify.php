@@ -15,8 +15,8 @@
             }
         </script>
         <?php
-            require("session.php");
-            require("../config/config.php");
+            require("../../etc/session.php");
+            require("../../etc/config.php");
         ?>
     </head>
     <body>

@@ -6,8 +6,8 @@
       <link rel="icon" href="images/favicon.ico">
       <link rel="stylesheet" href="styles/general.css">
       <?php
-         require("php/session.php");
-         require("config/config.php");
+         require("../etc/session.php");
+         require("../etc/config.php");
          $consultaUltimoIdIncidencia = mysqli_query($bbdd, "SELECT id FROM incidencias ORDER BY id DESC LIMIT 1;");
          if (mysqli_num_rows($consultaUltimoIdIncidencia) == 0) {
              $idIncidencia = 1;

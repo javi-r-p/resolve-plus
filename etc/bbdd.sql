@@ -184,8 +184,8 @@ CREATE TABLE intervencionesTecnicos (
 );
 
 -- Crear un técnico y un usuario
-INSERT INTO empresas VALUES (0, '0', 'Prueba', 'empresa0@resolveplus.local', '123456789', 'Gran Vía, 24', '30004');
-INSERT INTO usuarios VALUES (0, 0, 'Javier Rodríguez Parra', 'jrodriguez', 'jrodriguez@resolveplus.local', '*', '123456789', 0);
-INSERT INTO areas VALUES (0, 'Área de prueba');
-INSERT INTO tecnicos VALUES (0, 'Javier Rodríguez Parra', 'jrodriguez_tec', 'jrodriguez_tec@resolveplus.local', '*', '123456789');
+INSERT INTO empresas VALUES (0, '0', 'Empresa de prueba 0', 'empresa0@resolveplus.local', '123456789', 'Gran Vía, 24', '30004');
+INSERT INTO usuarios VALUES (0, 0, 'Usuario de prueba 0', 'usuario0', 'usuario0@resolveplus.local', '*', '123456789', 0);
+INSERT INTO areas VALUES (0, 'Área de prueba 0');
+INSERT INTO tecnicos VALUES (0, 'Técnico de prueba 0', 'tecnico0', 'tecnico0@resolveplus.local', '*', '123456789');
 INSERT INTO areasTecnicos VALUES (0, 0);

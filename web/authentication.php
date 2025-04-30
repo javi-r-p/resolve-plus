@@ -13,7 +13,8 @@
     </script>
     <?php
     // Archivo de conexión a la base de datos
-    require("config/config.php");
+    require("../etc/config.php");
+    include("../phpmailer/sendmail.php");
     session_start();
     $error = "";
     if ($_GET['accion'] == "logout") {
@@ -40,6 +41,7 @@
                     $_SESSION['usuario'] = $datosUsuario['id'];
                     $_SESSION['nombreUsuario'] = $datosUsuario['nombreUsuario'];
                     $_SESSION['nombre'] = $datosUsuario['nombre'];
+                    //enviarCorreo($_SESSION['correo'],'Inicio de sesión detectado','<p>Hola ' . $_SESSION['nombre'] . ', hemos detectado un inicio de sesión en Resolve+.<br>Si no reconoces esta acción, modifica <a href="https://resolveplus.ddns.net/php/modify.php?tipo=usuario">aquí</a> tu contraseña.</p>');
                     header("Location: index.php");
                 } elseif ($usuarioBloqueado['bloqueado'] == 1) {
                     $error = "Acceso denegado";
