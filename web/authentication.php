@@ -71,6 +71,7 @@
                             <input type="submit" name="login" value="Iniciar sesión" class="login100-form-btn">
                         </div>
                         <?php echo "<span class='error'>$error</span>\n"; ?>
+                        <a href="./tec/authentication.php?accion=login">Acceso al portal de técnicos</a>
                     </div>
                 </form>
             </div>
