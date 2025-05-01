@@ -3,7 +3,7 @@
         <title>Formularios de prueba de inserción de datos</title>
         <meta charset="UTF-8">
         <meta viewport="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="../images/favicon.ico">
+        <link rel="icon" href="images/favicon.ico">
         <link rel="stylesheet" href="styles/general.css">
         <script src="scripts/formsAndCss.js"></script>
         <script>
@@ -13,8 +13,8 @@
             }
         </script>
         <?php
-            require("php/session.php");
-            require("config/config.php");
+            require("../etc/session.php");
+            require("../etc/config.php");
             $consultaUltimoIdIncidencia = mysqli_query($bbdd, "SELECT id FROM incidencias ORDER BY id DESC LIMIT 1;");
             if (mysqli_num_rows($consultaUltimoIdIncidencia) == 0) {
                 $idIncidencia = 1;

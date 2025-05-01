@@ -1,6 +1,6 @@
 <?php
-    require("../config/config.php");
-    require("session.php");
+    require("../../etc/config.php");
+    require("../../etc/session.php");
     if (!isset($_GET['tipo'])) {
         die();
     } elseif ($_GET['tipo'] == "incidencia") {
@@ -8,9 +8,9 @@
         $descripcion = $_POST['descripcion'];
         $fechaApertura = $_POST['fechaApertura'];
         $fechaCierreEsp = $_POST['fechaCierreEsp'];
-        $usuario = $_POST['usuario'];
+        $usuario = $_SESSION['usuario'];
         $insercion = mysqli_query($bbdd, "INSERT INTO incidencias (id,descripcion,fechaApertura,fechaCierreEsp,usuario) VALUES ($id,'$descripcion','$fechaApertura','$fechaCierreEsp',$usuario)");
-        if ($insercion == TRUE) {
+        if ($insercion) {
             echo "<h1>La incidencia se ha registrado en el sistema</h1>";
             echo "<a href='../index.php'>Volver a la página principal</a>";
         } else {

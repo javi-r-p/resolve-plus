@@ -4,7 +4,8 @@
       <meta charset="UTF-8">
       <meta viewport="width=device-width, initial-scale=1.0">
       <link rel="icon" href="images/favicon.ico">
-      <link rel="stylesheet" href="styles/general.css">
+      <!-- <link rel="stylesheet" href="styles/general.css"> -->
+      <!-- <script src="scripts/htrequests.js"></script> -->
       <?php
          require("../etc/session.php");
          require("../etc/config.php");
@@ -100,8 +101,6 @@
             <h2>Registra una incidencia</h2>
             <form method="POST" action="php/register.php?tipo=incidencia">
                <textarea name="descripcion" placeholder="Escribe aquí una descripción acerca de la incidencia" cols="40" rows="15"></textarea>
-               <br>
-               <label>ID Usuario: </label><input type="text" name="usuario" value="<?php echo $_SESSION['usuario'] ?>" readonly>
                <br>
                <label>ID Incidencia: </label><input type="text" name="id" value="<?php echo $idIncidencia; ?>" readonly>
                <br>
