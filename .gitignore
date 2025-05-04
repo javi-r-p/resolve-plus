@@ -1,3 +1,4 @@
 web.config
 .well-known
 phpmailer/sendmail.php
+.vscode
