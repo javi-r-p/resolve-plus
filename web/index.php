@@ -4,8 +4,9 @@
       <meta charset="UTF-8">
       <meta viewport="width=device-width, initial-scale=1.0">
       <link rel="icon" href="images/favicon.ico">
-      <!-- <link rel="stylesheet" href="styles/general.css"> -->
-      <!-- <script src="scripts/htrequests.js"></script> -->
+      <link rel="stylesheet" href="styles/general.css">
+      <script src="scripts/htrequests.js"></script>
+      <script src="scripts/menuAndAnimations.js"></script>
       <?php
          require("../etc/session.php");
          require("../etc/config.php");
@@ -20,12 +21,18 @@
       ?>
    </head>
    <body>
-      <header>
+      <header id="header" class="body">
+         <button onclick="abrirMenu()"><img src="images/menu.png" alt="Abrir menú"></button>
          <h1 class="inline">Bienvenido a Resolve+ <em><?php echo $_SESSION['nombre']; ?></em></h1>
-         <button class="generalButton float-right"><a href="authentication.php?accion=logout">Cerrar sesión</a></button>
-         <button class="generalButton float-right"><a href="php/modify.php?tipo=usuario">Modificar perfil</a></button>
       </header>
-      <main>
+      <aside id="menuLateral">
+         <button class="display-block" onclick="cerrarMenu()"><img src="images/cerrar.png" alt="Cerrar menú"></button>
+         <a href="authentication.php?accion=logout">Cerrar sesión</a>
+         <a href="modify.php?tipo=usuario">Cambiar contraseña</a>
+         <a href="request.php">Solicitar el alta de un dispositivo</a>
+         <a href="suggestions.php">Buzón de sugerencias</a>
+      </aside>
+      <main id="main" class="body">
          <section>
             <?php
                if (mysqli_num_rows($consultarIncidencias) == 0) {
@@ -48,7 +55,7 @@
                      <?php
                            while ($incidencias = mysqli_fetch_array($consultarIncidencias)) {
                               echo "<tr>\n";
-                              echo "<td>" . $incidencias['id'] .  "</td>\n";
+                              echo "<td>" . $incidencias['id'] . "</td>\n";
                               echo "<td>";
                               if ($incidencias['estado'] == 0) {
                                  echo "CERRADA";
@@ -113,7 +120,7 @@
          </section>
       </main>
       <br>
-      <footer>
+      <footer id="footer" class="body">
          <p>Página desarrollada bajo la licencia GPL 2.0</p>
       </footer>
    </body>

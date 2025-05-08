@@ -1,10 +1,9 @@
 @font-face {
-    font-family: opensans;
-    src: url(opensans.woff2);
+    font-family: inter;
+    src: url(inter.woff);
 }
-
 body {
-    font-family: opensans, Arial, Helvetica, sans-serif;
+    font-family: inter, Arial, Helvetica, sans-serif;
     font-size: 14px;
     height: 100%;
 }
@@ -84,7 +83,7 @@ input::placeholder {
 
 .login100-form-title {
     display: block;
-    font-family: opensans;
+    font-family: inter;
     font-size: 30px;
     color: #333333;
     line-height: 1.2;
@@ -108,7 +107,7 @@ input::placeholder {
 }
 
 .input100 {
-    font-family: opensans;
+    font-family: inter;
     font-size: 15px;
     color: #555555;
     line-height: 1.2;
@@ -139,7 +138,7 @@ input::placeholder {
 }
 
 .login100-form-btn {
-    font-family: opensans;
+    font-family: inter;
     font-size: 15px;
     color: #FFFFFF;
     line-height: 1.2;
