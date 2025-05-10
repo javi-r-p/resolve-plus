@@ -131,9 +131,9 @@ aside a:any-link:hover {
     /*transition: margin-left 0.5s;*/
     display: block;
 }
-aside {
-    display: block;
-    width: 0%;
+.menuLateral {
+    /*display: block;*/
+    width: 22.5%;
     background-color: #FFFFFF;
     border-right: 2px solid #121212;
     z-index: 1;
@@ -144,11 +144,30 @@ aside {
     overflow-x: hidden;
     padding-left: 2%;
     padding-top: 4%;
-    transition: linear 0.4s ease-out;
+    animation: slideIn 0.3s ease-out;
 }
 .display-block {
     display: block;
 }
+.display-none {
+    display: none;
+}
 header, main, footer {
     transition: margin-left 0.4s ease-out;
+}
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+@keyframes slideOut {
+    0% {
+        width: 22.5%;
+    }
+    100% {
+        width: 0%;
+    }
 }

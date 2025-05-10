@@ -1,13 +1,13 @@
 function abrirMenu () {
     var menu = document.getElementById("menuLateral");
-    var header = document.getElementById("header");
-    var main = document.getElementById("main");
-    var header = document.getElementById("header");
-    //menu.style.display = "block";
-    menu.style.width = "22.5%";
+    menu.classList.remove = "display-none";
+    menu.classList.add = "menuLateral";
+    menu.style.transform = "translateX(0%)";
+    menu.style.display = "block";
 }
 function cerrarMenu () {
     var menu = document.getElementById("menuLateral");
-    //menu.style.display = "none";
-    menu.style.width = "0";
+    menu.classList.remove = "menuLateral";
+    menu.style.transform = "translateX(-100%)";
+    menu.classList.add = "display-none";
 }

@@ -10,6 +10,7 @@
       <?php
          require("../etc/session.php");
          require("../etc/config.php");
+         include("db_functions.php");
          $consultaUltimoIdIncidencia = mysqli_query($bbdd, "SELECT id FROM incidencias ORDER BY id DESC LIMIT 1;");
          if (mysqli_num_rows($consultaUltimoIdIncidencia) == 0) {
              $idIncidencia = 1;
@@ -25,7 +26,7 @@
          <button onclick="abrirMenu()"><img src="images/menu.png" alt="Abrir menú"></button>
          <h1 class="inline">Bienvenido a Resolve+ <em><?php echo $_SESSION['nombre']; ?></em></h1>
       </header>
-      <aside id="menuLateral">
+      <aside id="menuLateral" class="menuLateral">
          <button class="display-block" onclick="cerrarMenu()"><img src="images/cerrar.png" alt="Cerrar menú"></button>
          <a href="authentication.php?accion=logout">Cerrar sesión</a>
          <a href="modify.php?tipo=usuario">Cambiar contraseña</a>
@@ -35,73 +36,13 @@
       <main id="main" class="body">
          <section>
             <?php
-               if (mysqli_num_rows($consultarIncidencias) == 0) {
-                  echo "<h2>No tienes ninguna incidencia registrada</h2>";
-               } else {
             ?>
-                  <h2>Consulta el estado de tus incidencias</h2>
-                  <table>
-                     <tr>
-                        <th>ID</th>
-                        <th>Estado</th>
-                        <th>Descripción</th>
-                        <th>Fecha de apertura</th>
-                        <th>Fecha esperada de cierre</th>
-                        <th>Fecha de cierre</th>
-                        <th>Solución</th>
-                        <th>Desplazamiento</th>
-                        <th>Duración</th>
-                     </tr>
-                     <?php
-                           while ($incidencias = mysqli_fetch_array($consultarIncidencias)) {
-                              echo "<tr>\n";
-                              echo "<td>" . $incidencias['id'] . "</td>\n";
-                              echo "<td>";
-                              if ($incidencias['estado'] == 0) {
-                                 echo "CERRADA";
-                              } else {
-                                 echo "ABIERTA";
-                              }
-                              echo "</td>\n";
-                              echo "<td>" . $incidencias['descripcion'] . "</td>\n";
-                              echo "<td>" . date('d/m/Y', strtotime($incidencias['fechaApertura'])) .  "</td>\n";
-                              echo "<td>" . date('d/m/Y', strtotime($incidencias['fechaCierreEsp'])) .  "</td>\n";
-                              echo "<td>";
-                              if ($incidencias['fechaCierre'] == NULL) {
-                                 echo "-";
-                              } else {
-                                 echo date('d/m/Y', strtotime($incidencias['fechaCierre']));
-                              }
-                              echo "</td>\n";
-                              echo "<td>";
-                              if ($incidencias['solucion'] == NULL) {
-                                 echo "-";
-                              } else {
-                                 echo $incidencias['solucion'];
-                              }
-                              echo "</td>\n";
-                              echo "<td>";
-                              if ($incidencias['desplazamiento'] == NULL) {
-                                 echo "-";
-                              } elseif ($incidencias['desplazamiento'] == 0) {
-                                 echo "NO";
-                              } else {
-                                 echo "SÍ";
-                              }
-                              echo "</td>\n";
-                              echo "<td>";
-                              if ($incidencias['duracion'] == NULL) {
-                                 echo "-";
-                              } else {
-                                 $arrayDuracion = explode(":",$incidencias['duracion']);
-                                 echo $arrayDuracion[0] . "h y " . $arrayDuracion[1] . "min";
-                              }
-                              echo "</td>\n";
-                              echo "</tr>\n";
-                           }
-                        }
-                     ?>
-                  </table>
+               <h2>Consulta el estado de tus incidencias</h2>
+               <?php
+                  if (!consulta("tabla", "incidencias", "SELECT * FROM incidencias")) {
+                     echo "<h2>No tienes ninguna incidencia registrada</h2>\n";
+                  }
+               ?>
          </section>
          <br>
          <section>
