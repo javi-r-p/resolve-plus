@@ -10,15 +10,7 @@
       <?php
          require("../etc/session.php");
          require("../etc/config.php");
-         include("db_functions.php");
-         $consultaUltimoIdIncidencia = mysqli_query($bbdd, "SELECT id FROM incidencias ORDER BY id DESC LIMIT 1;");
-         if (mysqli_num_rows($consultaUltimoIdIncidencia) == 0) {
-             $idIncidencia = 1;
-         } else {
-             $ultimoIdIncidencia = mysqli_fetch_array($consultaUltimoIdIncidencia);
-             $idIncidencia = $ultimoIdIncidencia['id'] +1;
-         }
-         $consultarIncidencias = mysqli_query($bbdd, "SELECT id,descripcion,fechaApertura,fechaCierre,fechaCierreEsp,estado,solucion,desplazamiento,duracion FROM incidencias WHERE usuario = " . $_SESSION['usuario']);
+         include("../etc/db_functions.php");
       ?>
    </head>
    <body>
@@ -31,7 +23,6 @@
          <a href="authentication.php?accion=logout">Cerrar sesión</a>
          <a href="modify.php?tipo=usuario">Cambiar contraseña</a>
          <a href="request.php">Solicitar el alta de un dispositivo</a>
-         <a href="suggestions.php">Buzón de sugerencias</a>
       </aside>
       <main id="main" class="body">
          <section>
@@ -50,7 +41,7 @@
             <form method="POST" action="php/register.php?tipo=incidencia">
                <textarea name="descripcion" placeholder="Escribe aquí una descripción acerca de la incidencia" cols="40" rows="15"></textarea>
                <br>
-               <label>ID Incidencia: </label><input type="text" name="id" value="<?php echo $idIncidencia; ?>" readonly>
+               <label>ID Incidencia: </label><input type="text" name="id" value="<?php echo ultimoId("incidencias"); ?>" readonly>
                <br>
                <label>Fecha de apertura: </label><input type="text" name="fechaApertura" value="<?php echo date("Y-m-d"); ?>" readonly>
                <br>
@@ -64,5 +55,8 @@
       <footer id="footer" class="body">
          <p>Página desarrollada bajo la licencia GPL 2.0</p>
       </footer>
+      <?php
+         mysqli_close($bbdd);
+      ?>
    </body>
 </html>

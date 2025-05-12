@@ -41,7 +41,6 @@
                     $_SESSION['usuario'] = $datosUsuario['id'];
                     $_SESSION['nombreUsuario'] = $datosUsuario['nombreUsuario'];
                     $_SESSION['nombre'] = $datosUsuario['nombre'];
-                    //enviarCorreo($_SESSION['correo'],'Inicio de sesión detectado','<p>Hola ' . $_SESSION['nombre'] . ', hemos detectado un inicio de sesión en Resolve+.<br>Si no reconoces esta acción, modifica <a href="https://resolveplus.ddns.net/php/modify.php?tipo=usuario">aquí</a> tu contraseña.</p>');
                     header("Location: index.php");
                 } elseif ($usuarioBloqueado['bloqueado'] == 1) {
                     $error = "Acceso denegado";
@@ -64,14 +63,14 @@
                         <input class="input100" type="text" name="usuario" placeholder="Correo electrónico o usuario" autocomplete="off">
                     </div>
                     <div class="wrap-input100">
-                        <input class="input100" type="password" name="contrasenia" id="contrasenia" placeholder="Contraseña" autocomplete="off"><img id="visibilidadContrasenia" src="images/visible.png" alt="Mostrar contraseña">
+                        <input class="input100" type="password" name="contrasenia" id="contrasenia" placeholder="Contraseña" autocomplete="off"><img id="visibilidadContrasenia" src="images/visibility.png" alt="Mostrar contraseña" onclick="mostrarContrasenia('usuario')">
                     </div>
                     <div class="container-login100-form-btn">
                         <div class="wrap-login100-form-btn">
                             <input type="submit" name="login" value="Iniciar sesión" class="login100-form-btn">
                         </div>
                         <?php echo "<span class='error'>$error</span>\n"; ?>
-                        <a href="./tec/authentication.php?accion=login">Acceso al portal de técnicos</a>
+                        <a href="tec/index.php">Acceso al portal de técnicos</a>
                     </div>
                 </form>
             </div>

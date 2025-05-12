@@ -161,3 +161,7 @@ input::placeholder {
 input[type=submit] {
     cursor: pointer;
 }
+a:any-link {
+    color: black;
+    padding-top: 5%;
+}

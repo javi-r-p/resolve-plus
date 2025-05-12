@@ -50,9 +50,9 @@
                 } else {
         ?>
                     <form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
-                        <label>Contraseña: </label><input type="password" name="contrasenia" id="contrasenia"><img id="visibilidadContrasenia" src="../images/visible.png" alt="Mostrar contraseña">
+                        <label>Contraseña: </label><input type="password" name="contrasenia" id="contrasenia"><img id="visibilidadContrasenia" src="../images/visibility.png" alt="Mostrar contraseña">
                         <br>
-                        <label>Confirmar contraseña: </label><input type="password" name="contrasenia2" id="contrasenia2"><img id="visibilidadContrasenia2" src="../images/visible.png" alt="Mostrar contraseña">
+                        <label>Confirmar contraseña: </label><input type="password" name="contrasenia2" id="contrasenia2"><img id="visibilidadContrasenia2" src="../images/visibility.png" alt="Mostrar contraseña">
                         <br>
                         <input type="submit" id="enviarContrasenia" class="hidden" name="modificar" value="Modificar contraseña">
                     </form>

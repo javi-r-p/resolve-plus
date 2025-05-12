@@ -1,5 +1,5 @@
-function showHint(str) {
-  if (str.length == 0) {
+function busqueda(termino, tipo, tabla) {
+  if (termino.length == 0) {
     document.getElementById("salida").innerHTML = "";
     return;
   } else {
@@ -9,7 +9,7 @@ function showHint(str) {
         document.getElementById("salida").innerHTML = this.responseText;
       }
     };
-    xmlhttp.open("GET", "php/busqueda.php?q=" + encodeURIComponent(str), true);
+    xmlhttp.open("GET", "../php/busqueda.php?q=" + encodeURIComponent(termino) + "&tipo=" + encodeURIComponent(tipo) + "&tabla=" + encodeURIComponent(tabla), true);
     xmlhttp.send();
   }
 }

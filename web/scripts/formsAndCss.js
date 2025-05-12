@@ -28,14 +28,22 @@ function mostrarCampos() {
         }
     }
 }
-function mostrarContrasenia () {
+function mostrarContrasenia (tipo) {
     var imagen = document.getElementById("visibilidadContrasenia");
     var entrada = document.getElementById("contrasenia");
     if (entrada.type == "password") {
-        imagen.src = "../images/noVisible.png";
+        if (tipo == "usuario") {
+            imagen.src = "images/noVisibility.png";
+        } else {
+            imagen.src = "../images/noVisibility.png";
+        }
         entrada.type = "text";
     } else {
-        imagen.src = "../images/visible.png";
+        if (tipo == "usuario") {
+            imagen.src = "images/visibility.png";
+        } else {
+            imagen.src = "../images/visibility.png";
+        }
         entrada.type = "password";
     }
 }
@@ -50,13 +58,13 @@ function mostrarContrasenias () {
     var entrada = document.getElementById("contrasenia");
     var entrada2 = document.getElementById("contrasenia2");
     if (entrada.type == "password" || entrada2.type == "password") {
-        imagen.src = "images/noVisible.png";
-        imagen2.src = "images/noVisible.png";
+        imagen.src = "images/noVisibility.png";
+        imagen2.src = "images/noVisibility.png";
         entrada.type = "text";
         entrada2.type = "text";
     } else {
-        imagen.src = "images/visible.png";
-        imagen2.src = "images/visible.png";
+        imagen.src = "images/visibility.png";
+        imagen2.src = "images/visibility.png";
         entrada.type = "password";
         entrada2.type = "password";
     }

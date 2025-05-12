@@ -111,7 +111,7 @@ aside button {
     right: 2%;
     position: absolute;
 }
-aside a:any-link {
+aside a:any-link, aside a {
     text-decoration: none;
     display: block;
     color: #424242;
@@ -120,8 +120,11 @@ aside a:any-link {
     font-size: larger;
     font-weight: bold;
 }
-aside a:any-link:hover {
+aside a:any-link:hover, aside a:hover {
     color: black;
+}
+.padding-left {
+    margin-left: 10%;
 }
 #menuLateral {
     display: none;
@@ -170,4 +173,7 @@ header, main, footer {
     100% {
         width: 0%;
     }
+}
+button {
+    cursor: pointer;
 }

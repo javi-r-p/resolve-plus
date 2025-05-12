@@ -1,5 +1,5 @@
 <?php
-require("../etc/config.php");
+require("config.php");
 function obtenerCampos ($tabla) {
     global $bbdd;
     $consulta = mysqli_query($bbdd, "SELECT * FROM " . $tabla);
@@ -30,20 +30,24 @@ function consulta ($formato, $tabla, $sentencia) {
                 }
                 echo "</table>\n";
                 break;
-            case "lista":
-
-                break;
             case "desplegable":
 
                 break;
         }
+        mysqli_free_result($consulta);
         return true;
     }
 }
-function insercion ($sentencia) {
+function insercion ($tabla, $sentencia) {
     global $bbdd;
+    if ($tabla == "dispositivo") {
+
+    } else {
+
+    }
     $insercion = mysqli_query($bbdd,$sentencia);
     if ($insercion) {
+        
         return true;
     } else {
         return false;
@@ -56,6 +60,16 @@ function actualizar ($sentencia) {
         return true;
     } else {
         return false;
+    }
+}
+function ultimoId ($tabla) {
+    global $bbdd;
+    $consulta = mysqli_query($bbdd, "SELECT id FROM $tabla ORDER BY id DESC LIMIT 1");
+    if (mysqli_num_rows($consulta) == 0) {
+        return 1;
+    } else {
+        $ultimoId = mysqli_fetch_array($consulta);
+        return $ultimoId['id'] +1;
     }
 }
 ?>

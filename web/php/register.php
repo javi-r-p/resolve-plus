@@ -45,6 +45,7 @@
                 }, $arrayRecorrido);
                 $datos = implode(",", $valoresComillas);
             }
+            echo "INSERT INTO $tipoDispositivo VALUES(" . $id . "," . $datos . ")";
             $insercionTipoDispositivo = mysqli_query($bbdd, "INSERT INTO $tipoDispositivo VALUES(" . $id . "," . $datos . ")");
             if ($insercionTipoDispositivo == TRUE) {
                 echo "<h1>El dispositivo se ha registrado en el sistema</h1>";
