@@ -52,19 +52,29 @@ function crearNombreUsuario () {
     var nombreUsuario = correoElectronico.split("@")[0];
     document.getElementById("nombreUsuario").value = nombreUsuario;
 }
-function mostrarContrasenias () {
+function mostrarContrasenias (tipo) {
     var imagen = document.getElementById("visibilidadContrasenia");
     var imagen2 = document.getElementById("visibilidadContrasenia2");
     var entrada = document.getElementById("contrasenia");
     var entrada2 = document.getElementById("contrasenia2");
     if (entrada.type == "password" || entrada2.type == "password") {
-        imagen.src = "images/noVisibility.png";
-        imagen2.src = "images/noVisibility.png";
+        if (tipo == "usuario") {
+            imagen.src = "images/noVisibility.png";
+            imagen2.src = "images/noVisibility.png";
+        } else {
+            imagen.src = "../images/noVisibility.png";
+            imagen2.src = "../images/noVisibility.png";
+        }
         entrada.type = "text";
         entrada2.type = "text";
     } else {
-        imagen.src = "images/visibility.png";
-        imagen2.src = "images/visibility.png";
+        if (tipo == "usuario") {
+            imagen.src = "images/visibility.png";
+            imagen2.src = "images/visibility.png";
+        } else {
+            imagen.src = "../../images/visibility.png";
+            imagen2.src = "../../images/visibility.png";
+        }
         entrada.type = "password";
         entrada2.type = "password";
     }

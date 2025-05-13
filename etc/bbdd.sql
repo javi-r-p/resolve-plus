@@ -112,6 +112,7 @@ CREATE TABLE tecnicos (
     correo VARCHAR(50) NOT NULL,
     contrasenia VARCHAR(256) NOT NULL,
     telefono INT NOT NULL,
+    bloqueado BOOLEAN NOT NULL,
     CONSTRAINT PK_tecnicos PRIMARY KEY (id)
 );
 
@@ -210,17 +211,17 @@ INSERT INTO empresas (id, cif, nombre, correo, telefono, direccion, cp) VALUES
 -- Crear usuarios
 INSERT INTO usuarios VALUES
 (0, 0, 'Usuario de prueba 0', 'usuario0', 'usuario0@resolveplus.local', '*', '123456789', 0),
-(1, 1, 'Carlos Fernández', 'cfernandez', 'cfernandez@gourmetdelicias.com', '*', '912345001', 0),
-(2, 2, 'Ana López', 'alopez', 'alopez@autorapido.com', '*', '934567002', 0),
-(3, 3, 'Javier Martínez', 'jmartinez', 'jmartinez@ecohogar.com', '*', '956789003', 0),
-(4, 4, 'Sofía Gómez', 'sgomez', 'sgomez@globalmoda.com', '*', '900123004', 0),
-(5, 5, 'Miguel Rodríguez', 'mrodriguez', 'mrodriguez@creativemedia.com', '*', '921234005', 0),
-(6, 6, 'Laura Sánchez', 'lsanchez', 'lsanchez@agrofinca.com', '*', '912345006', 0),
-(7, 7, 'David Jiménez', 'djimenez', 'djimenez@viajesfantasticos.com', '*', '934567007', 0),
-(8, 8, 'Elena Díaz', 'ediaz', 'ediaz@saludvital.com', '*', '956789008', 0),
-(9, 9, 'Pablo Ruiz', 'pruiz', 'pruiz@construccionesseguras.com', '*', '900123009', 0),
-(10, 10, 'Carmen Moreno', 'cmoreno', 'cmoreno@deporteselite.com', '*', '921234010', 0),
-(11, 11, 'Isabel Castro', 'icastro', 'icastro@agenciadeeventos.com', '*', '921234050', 0);
+(1, 1, 'Carlos Fernández', 'cfernandez', 'cfernandez@gourmetdelicias.com', '*', '912345001', 1),
+(2, 2, 'Ana López', 'alopez', 'alopez@autorapido.com', '*', '934567002', 1),
+(3, 3, 'Javier Martínez', 'jmartinez', 'jmartinez@ecohogar.com', '*', '956789003', 1),
+(4, 4, 'Sofía Gómez', 'sgomez', 'sgomez@globalmoda.com', '*', '900123004', 1),
+(5, 5, 'Miguel Rodríguez', 'mrodriguez', 'mrodriguez@creativemedia.com', '*', '921234005', 1),
+(6, 6, 'Laura Sánchez', 'lsanchez', 'lsanchez@agrofinca.com', '*', '912345006', 1),
+(7, 7, 'David Jiménez', 'djimenez', 'djimenez@viajesfantasticos.com', '*', '934567007', 1),
+(8, 8, 'Elena Díaz', 'ediaz', 'ediaz@saludvital.com', '*', '956789008', 1),
+(9, 9, 'Pablo Ruiz', 'pruiz', 'pruiz@construccionesseguras.com', '*', '900123009', 1),
+(10, 10, 'Carmen Moreno', 'cmoreno', 'cmoreno@deporteselite.com', '*', '921234010', 1),
+(11, 11, 'Isabel Castro', 'icastro', 'icastro@agenciadeeventos.com', '*', '921234050', 1);
 
 -- Crear áreas
 INSERT INTO areas VALUES
@@ -233,22 +234,22 @@ INSERT INTO areas VALUES
 
 -- Crear técnicos
 INSERT INTO tecnicos VALUES
-(0, 'Técnico de prueba 0', 'tecnico0', 'tecnico0@resolveplus.local', '*', '123456789'),
-(1, 'Luis Ramírez', 'lramirez', 'lramirez@resolveplus.es', '*', '912345001'),
-(2, 'Andrea Torres', 'atorres', 'atorres@resolveplus.es', '*', '934567002'),
-(3, 'Fernando Martínez', 'fmartinez', 'fmartinez@resolveplus.es', '*', '956789003'),
-(4, 'Sofía Ruiz', 'sruiz', 'sruiz@resolveplus.es', '*', '900123004'),
-(5, 'Daniel Gómez', 'dgomez', 'dgomez@resolveplus.es', '*', '921234005'),
-(6, 'Beatriz Sánchez', 'bsanchez', 'bsanchez@resolveplus.es', '*', '912345006'),
-(7, 'Alejandro López', 'alopez', 'alopez@resolveplus.es', '*', '934567007'),
-(8, 'Natalia Castillo', 'ncastillo', 'ncastillo@resolveplus.es', '*', '956789008'),
-(9, 'Emilio Hernández', 'ehernandez', 'ehernandez@resolveplus.es', '*', '900123009'),
-(10, 'Carla Domínguez', 'cdominguez', 'cdominguez@resolveplus.es', '*', '921234010'),
-(11, 'Roberto Vázquez', 'rvazquez', 'rvazquez@resolveplus.es', '*', '912345011'),
-(12, 'Esther Ramos', 'eramos', 'eramos@resolveplus.es', '*', '934567012'),
-(13, 'Lucía Salas', 'lsalas', 'lsalas@resolveplus.es', '*', '956789013'),
-(14, 'Pablo Aguilar', 'paguilar', 'paguilar@resolveplus.es', '*', '900123014'),
-(15, 'Irene Navarro', 'inavarro', 'inavarro@resolveplus.es', '*', '921234015');
+(0, 'Técnico de prueba 0', 'tecnico0', 'tecnico0@resolveplus.local', '*', '123456789', 0),
+(1, 'Luis Ramírez', 'lramirez', 'lramirez@resolveplus.es', '*', '912345001', 1),
+(2, 'Andrea Torres', 'atorres', 'atorres@resolveplus.es', '*', '934567002', 1),
+(3, 'Fernando Martínez', 'fmartinez', 'fmartinez@resolveplus.es', '*', '956789003', 1),
+(4, 'Sofía Ruiz', 'sruiz', 'sruiz@resolveplus.es', '*', '900123004', 1),
+(5, 'Daniel Gómez', 'dgomez', 'dgomez@resolveplus.es', '*', '921234005', 1),
+(6, 'Beatriz Sánchez', 'bsanchez', 'bsanchez@resolveplus.es', '*', '912345006', 1),
+(7, 'Alejandro López', 'alopez', 'alopez@resolveplus.es', '*', '934567007', 1),
+(8, 'Natalia Castillo', 'ncastillo', 'ncastillo@resolveplus.es', '*', '956789008', 1),
+(9, 'Emilio Hernández', 'ehernandez', 'ehernandez@resolveplus.es', '*', '900123009', 1),
+(10, 'Carla Domínguez', 'cdominguez', 'cdominguez@resolveplus.es', '*', '921234010', 1),
+(11, 'Roberto Vázquez', 'rvazquez', 'rvazquez@resolveplus.es', '*', '912345011', 1),
+(12, 'Esther Ramos', 'eramos', 'eramos@resolveplus.es', '*', '934567012', 1),
+(13, 'Lucía Salas', 'lsalas', 'lsalas@resolveplus.es', '*', '956789013', 1),
+(14, 'Pablo Aguilar', 'paguilar', 'paguilar@resolveplus.es', '*', '900123014', 1),
+(15, 'Irene Navarro', 'inavarro', 'inavarro@resolveplus.es', '*', '921234015', 1);
 
 -- Asociar áreas con técnicos
 INSERT INTO areasTecnicos VALUES

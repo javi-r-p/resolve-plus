@@ -108,10 +108,15 @@ header button, aside button {
 }
 aside button {
     top: 1%;
-    right: 2%;
     position: absolute;
 }
-aside a:any-link, aside a {
+aside button:nth-last-of-type(1), aside button:nth-of-type(2) {
+    left: 2%;
+}
+aside button:nth-of-type(3) {
+    left: 92%;
+}
+aside a:any-link, aside a, aside p {
     text-decoration: none;
     display: block;
     color: #424242;
@@ -123,7 +128,10 @@ aside a:any-link, aside a {
 aside a:any-link:hover, aside a:hover {
     color: black;
 }
-.padding-left {
+aside p:hover {
+    cursor: default;
+}
+.margin-left {
     margin-left: 10%;
 }
 #menuLateral {
