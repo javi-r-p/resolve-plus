@@ -29,14 +29,14 @@
 
         </main>
         <?php
-            if ($_GET['tipo'] == "usuario") {
+            if ($_GET['tipo'] == "Usuario") {
                 if (isset($_POST['modificar'])) {
                     $contrasenia = hash('sha256', $_POST['contrasenia']);
                     $contrasenia2 = hash('sha256', $_POST['contrasenia2']);
                     $id = $_SESSION['usuario'];
                     if ($contrasenia != $contrasenia2) {
                         echo "<h2 id='salida'>Las contraseñas no coinciden.</h2>\n";
-                        echo "<a href='modify.php?tipo=usuario'>Volver a modificación de perfil</a>\n";
+                        echo "<a href='php/modify.php?tipo=Usuario'>Volver a modificación de perfil</a>\n";
                     } else {
                         $modificacion = mysqli_query($bbdd, "UPDATE usuarios SET contrasenia = '$contrasenia' WHERE id = '$id'");
                         if ($modificacion) {
@@ -44,7 +44,7 @@
                             echo "<a href='../index.php'>Volver a la página principal</a>\n";
                         } else {
                             echo "<h2>La contraseña no se ha podido actualizar. Inténtalo de nuevo más tarde.</h2>";
-                            echo "<a href='modify.php?tipo=usuario'>Volver a modificación de perfil</a>\n";
+                            echo "<a href='php/modify.php?tipo=Usuario'>Volver a modificación de perfil</a>\n";
                         }
                     }
                 } else {

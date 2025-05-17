@@ -9,7 +9,7 @@ function busqueda(termino, tipo, tabla) {
         document.getElementById("salida").innerHTML = this.responseText;
       }
     };
-    xmlhttp.open("GET", "../php/busqueda.php?q=" + encodeURIComponent(termino) + "&tipo=" + encodeURIComponent(tipo) + "&tabla=" + encodeURIComponent(tabla), true);
+    xmlhttp.open("GET", "../php/busqueda.php?termino=" + encodeURIComponent(termino) + "&tipo=" + encodeURIComponent(tipo) + "&tabla=" + encodeURIComponent(tabla), true);
     xmlhttp.send();
   }
 }

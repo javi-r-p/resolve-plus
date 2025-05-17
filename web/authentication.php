@@ -46,7 +46,7 @@
                     $error = "Acceso denegado";
                 }
             } else {
-                $error = "Acceso denegado";
+                $error = "Credenciales incorrectas";
             }
         }
     }

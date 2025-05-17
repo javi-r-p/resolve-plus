@@ -27,15 +27,21 @@
             $contrasenia = hash('sha512', $_POST['contrasenia']);
             // Consultar credenciales introducidas por el usuario en la base de datos
             $consulta = mysqli_query($bbdd, "SELECT id,correo,contrasenia,nombre,nombreUsuario FROM tecnicos WHERE correo = '$usuario' AND contrasenia = '$contrasenia'");
-            $datosUsuario = mysqli_fetch_array($consulta);
+            $datosTecnico = mysqli_fetch_array($consulta);
             if (mysqli_num_rows($consulta) == 1) {
-                $_SESSION['correo'] = $datosUsuario['correo'];
-                $_SESSION['tecnico'] = $datosUsuario['id'];
-                $_SESSION['nombreUsuario'] = $datosUsuario['nombreUsuario'];
-                $_SESSION['nombre'] = $datosUsuario['nombre'];
-                header("Location: index.php");
+                $consultaTecnicoBloqueado = mysqli_query($bbdd, "SELECT bloqueado FROM tecnicos WHERE id = '" . $datosTecnico['id'] . "'");
+                $tecnicoBloqueado = mysqli_fetch_array($consultaTecnicoBloqueado);
+                if ($tecnicoBloqueado['bloqueado'] == 0) {       
+                    $_SESSION['correo'] = $datosTecnico['correo'];
+                    $_SESSION['tecnico'] = $datosTecnico['id'];
+                    $_SESSION['nombreUsuario'] = $datosTecnico['nombreUsuario'];
+                    $_SESSION['nombre'] = $datosTecnico['nombre'];
+                    header("Location: index.php");
+                } else {
+                    $error = "Acceso denegado";
+                }
             } else {
-                $error = "Acceso denegado";
+                $error = "Credenciales incorrectas";
             }
         }
     }

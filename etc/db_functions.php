@@ -6,7 +6,7 @@ function obtenerCampos ($tabla) {
     $campos = mysqli_fetch_fields($consulta);
     return $campos;
 }
-function consulta ($formato, $tabla, $sentencia) {
+function consulta ($formato, $tabla, $sentencia, $mostrarIconos, $enlaces) {
     global $bbdd;
     $consulta = mysqli_query($bbdd,$sentencia);
     if (mysqli_num_rows($consulta) == 0) {
@@ -25,6 +25,10 @@ function consulta ($formato, $tabla, $sentencia) {
                     foreach (obtenerCampos($tabla) as $campo) {
                         $nombreCampo = $campo->name;
                         echo "<td>" . $resultados[$nombreCampo] . "</td>\n";
+                    }
+                    if ($mostrarIconos) {
+                        echo "<td><img src='../images/edit.png'></td>\n";                            
+                        echo "<td><img src='../images/delete.png'></td>\n";
                     }
                     echo "</tr>\n";
                 }

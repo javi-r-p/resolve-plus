@@ -3,7 +3,7 @@
     require("../../etc/session.php");
     if (!isset($_GET['tipo'])) {
         die();
-    } elseif ($_GET['tipo'] == "incidencia") {
+    } elseif ($_GET['tipo'] == "Incidencia") {
         $id = $_POST['id'];
         $descripcion = $_POST['descripcion'];
         $fechaApertura = $_POST['fechaApertura'];
@@ -16,7 +16,7 @@
         } else {
             echo "<h1>Ha habido un error en el registro. Inténtalo de nuevo más tarde.";
         }
-    } elseif ($_GET['tipo'] == "dispositivo") {
+    } elseif ($_GET['tipo'] == "Dispositivo") {
         $id = $_POST['id'];
         $empresa = $_POST['empresa'];
         $numeroSerie = $_POST['numeroSerie'];
@@ -56,7 +56,7 @@
         } else {
             echo "<h1>Ha habido un error en el registro. Inténtalo de nuevo más tarde.";
         }
-    } elseif ($_GET['tipo'] == "usuario") {
+    } elseif ($_GET['tipo'] == "Usuario") {
         $id = $_POST['id'];
         $empresa = $_POST['empresa'];
         $nombre = $_POST['nombre'];
@@ -84,7 +84,7 @@
         } else {
             echo "<h1>Ha habido un error en el registro. Inténtalo de nuevo más tarde.";
         }
-    } elseif ($_GET['tipo'] == "empresa") {
+    } elseif ($_GET['tipo'] == "Empresa") {
         $id = $_POST['id'];
         $cif = $_POST['cif'];
         $nombre = $_POST['nombre'];

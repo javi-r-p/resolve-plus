@@ -5,6 +5,9 @@
     <meta viewport="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles/general.css">
+    <script src="scripts/formsAndCss.js"></script>
+    <script src="scripts/htrequests.js"></script>
+    <script src="scripts/menuAndAnimations.js"></script>
     <script>
 
     </script>
@@ -12,6 +15,18 @@
     ?>
 </head>
 <body>
+    <header>
+
+    </header>
+    <aside>
+
+    </aside>
+    <main>
+
+    </main>
+    <footer>
+        
+    </footer>
     <?php
         mysqli_close($bbdd);
     ?>

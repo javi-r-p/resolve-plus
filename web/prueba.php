@@ -53,7 +53,7 @@
         ?>
     </head>
     <body>
-        <form method="POST" action="php/register.php?tipo=incidencia">
+        <form method="POST" action="php/register.php?type=incidencia">
             <textarea name="descripcion" placeholder="Escribe aquí una descripción acerca de la incidencia" cols="40" rows="15"></textarea>
             <br>
             <label>ID Usuario: </label><input type="text" name="usuario" value="<?php echo $_SESSION['usuario']; ?>" readonly>
@@ -67,7 +67,7 @@
             <input type="submit" value="Registrar incidencia">
         </form>
         <hr>
-        <form method="POST" action="php/register.php?tipo=dispositivo">
+        <form method="POST" action="php/register.php?tipo=Dispositivo">
             <label>Identificador: </label><input type="text" name="id" value="<?php echo $idDispositivo; ?>" readonly>
             <br>
             <label>Empresa: </label><input type="text" name="empresa">
@@ -130,7 +130,7 @@
             <input type="submit" value="Registrar dispositivo">
         </form>
         <hr>
-        <form method="POST" action="php/register.php?tipo=usuario">
+        <form method="POST" action="php/register.php?tipo=Usuario">
             <label>ID: </label><input type="text" name="id" value="<?php echo $idUsuario; ?>" readonly>
             <br>
             <label>Empresa: </label><input type="text" name="empresa">
@@ -148,7 +148,7 @@
             <input type="submit" value="Registrar usuario">
         </form>
         <hr>
-        <form method="POST" action="php/register.php?tipo=tecnico">
+        <form method="POST" action="php/register.php?tipo=Tecnico">
             <label>ID: </label><input type="text" name="id" value="<?php echo $idTecnico; ?>" readonly>
             <br>
             <label>Nombre: </label><input type="text" name="nombre">
@@ -162,7 +162,7 @@
             <input type="submit" name="registrar" value="Registrar técnico">
         </form>
         <hr>
-        <form method="POST" action="php/register.php?tipo=empresa">
+        <form method="POST" action="php/register.php?tipo=Empresa">
             <label>ID: </label><input type="text" name="id" value="<?php echo $idEmpresa; ?>" readonly>
             <br>
             <label>CIF: </label><input type="text" name="cif">

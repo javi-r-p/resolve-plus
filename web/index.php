@@ -19,9 +19,9 @@
          <h1 class="inline">Bienvenido a Resolve+ <em><?php echo $_SESSION['nombre']; ?></em></h1>
       </header>
       <aside id="menuLateral" class="menuLateral">
-         <button class="display-block" onclick="cerrarMenu()"><img src="images/cerrar.png" alt="Cerrar menú"></button>
+         <button class="display-block" onclick="cerrarMenu()"><img src="images/close.png" alt="Cerrar menú"></button>
          <a href="authentication.php?accion=logout">Cerrar sesión</a>
-         <a href="modify.php?tipo=usuario">Cambiar contraseña</a>
+         <a href="php/modify.php?tipo=Usuario">Cambiar contraseña</a>
          <a href="request.php">Solicitar el alta de un dispositivo</a>
       </aside>
       <main id="main" class="body">
@@ -30,7 +30,7 @@
             ?>
                <h2>Consulta el estado de tus incidencias</h2>
                <?php
-                  if (!consulta("tabla", "incidencias", "SELECT * FROM incidencias")) {
+                  if (!consulta("tabla", "incidencias", "SELECT * FROM incidencias", FALSE, FALSE)) {
                      echo "<h2>No tienes ninguna incidencia registrada</h2>\n";
                   }
                ?>
@@ -38,7 +38,7 @@
          <br>
          <section>
             <h2>Registra una incidencia</h2>
-            <form method="POST" action="php/register.php?tipo=incidencia">
+            <form method="POST" action="php/register.php?type=incidencia">
                <textarea name="descripcion" placeholder="Escribe aquí una descripción acerca de la incidencia" cols="40" rows="15"></textarea>
                <br>
                <label>ID Incidencia: </label><input type="text" name="id" value="<?php echo ultimoId("incidencias"); ?>" readonly>

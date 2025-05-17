@@ -1,56 +1,54 @@
 <html lang="es">
 <head>
-    <title></title>
+    <title>Registro</title>
     <meta charset="UTF-8">
     <meta viewport="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../images/favicon.ico">
-    <link rel="stylesheet" href="../styles/general.css">
-    <script src="../scripts/formsAndCss.js"></script>
-    <script src="../scripts/htrequests.js"></script>
-    <script src="../scripts/menuAndAnimations.js"></script>
+    <link rel="icon" href="../../images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/general.css">
+    <script src="../../scripts/formsAndCss.js"></script>
+    <script src="../../scripts/htrequests.js"></script>
+    <script src="../../scripts/menuAndAnimations.js"></script>
     <script>
-
+        
     </script>
     <?php
-        require("../../etc/sessionTec.php");
-        require("../../etc/config.php");
-        include("../../etc/db_functions.php");
+        require("../../../etc/sessionTec.php");
+        require("../../../etc/config.php");
+        include("../../../etc/db_functions.php");
     ?>
 </head>
 <body>
     <header>
         <h1>Registrar <?php echo $_GET['tipo']; ?></h1>
-        <button onclick="abrirMenu()"><img src="../images/menu.png" alt="Abrir menú"></button>
+        <button onclick="abrirMenu()"><img src="../../images/menu.png" alt="Abrir menú"></button>
     </header>
     <aside id="menuLateral" class="menuLateral">
-        <button class="display-block float-left"><a href="authentication.php?accion=logout"><img src="../images/logout.png" alt="Cerrar sesión"></a></button>
-        <button class="display-block float-left"><a href="modify.php?tipo=tecnico"><img src="../images/password.png" alt="Cambiar contraseña"></a></button>
-        <button class="display-block float-right" onclick="cerrarMenu()"><img src="../images/cerrar.png" alt="Cerrar menú"></button>
+        <button class="display-block float-left"><a href="../authentication.php?accion=logout"><img src="../../images/logout.png" alt="Cerrar sesión"></a></button>
+        <button class="display-block float-left"><a href="modify.php?tipo=Tecnico"><img src="../../images/password.png" alt="Cambiar contraseña"></a></button>
+        <button class="display-block float-right" onclick="cerrarMenu()"><img src="../../images/close.png" alt="Cerrar menú"></button>
+        <a href="../index.php">Página principal</a>
         <p>Gestión de dispositivos</p>
-        <a href="registerForms.php?tipo=dispositivo" class="margin-left">Registrar un dispositivo</a>
-        <a href="delete.php?tipo=dispositivo" class="margin-left">Eliminar un dispositivo</a>
-        <a href="view.php?tipo=dispositivos" class="margin-left">Ver / modificar dispositivos registrados</a>
+        <a href="registerForms.php?tipo=Dispositivo" class="margin-left">Registrar un dispositivo</a>
+        <a href="view.php?tipo=Dispositivos" class="margin-left">Ver / modificar dispositivos registrados</a>
         <p>Gestión de empresas</p>
-        <a href="registerForms.php?tipo=empresas" class="margin-left">Registrar una empresa</a>
-        <a href="delete.php?tipo=empresas" class="margin-left">Eliminar una empresa</a>
-        <a href="view.php?tipo=empresas" class="margin-left">Ver / modificar empresas registradas</a>
+        <a href="registerForms.php?tipo=Empresa" class="margin-left">Registrar una empresa</a>
+        <a href="view.php?tipo=Empresas" class="margin-left">Ver / modificar empresas registradas</a>
         <p>Gestión de usuarios</p>
-        <a href="registerForms.php?tipo=usuario" class="margin-left">Registrar un usuario</a>
-        <a href="delete.php?tipo=usuario" class="margin-left">Eliminar un usuario</a>
-        <a href="view.php?tipo=usuario" class="margin-left">Ver usuarios registrados</a>
+        <a href="registerForms.php?tipo=Usuario" class="margin-left">Registrar un usuario</a>
+        <a href="view.php?tipo=Usuarios" class="margin-left">Ver usuarios registrados</a>
         <p>Gestión de técnicos</p>
-        <a href="registerForms.php?tipo=tecnico" class="margin-left">Registrar un técnicos</a>
-        <a href="delete.php?tipo=tecnico" class="margin-left">Eliminar un técnicos</a>
-        <a href="view.php?tipo=tecnico" class="margin-left">Ver / modificar técnicos registrados</a>
+        <a href="registerForms.php?tipo=Tecnico" class="margin-left">Registrar un técnicos</a>
+        <a href="view.php?tipo=Tecnicos" class="margin-left">Ver / modificar técnicos registrados</a>
+        <a href="statistics.php">Estadísticas</a>
     </aside>
     <main>
         <?php
             if (!isset($_GET['tipo']) OR empty($_GET['tipo'])) {
                 echo "<h3>Parámetros inválidos</h3>\n";
                 echo "<a href='index.php'>Volver a la página de inicio</a>\n";
-            } elseif ($_GET['tipo'] == "dispositivo") {
+            } elseif ($_GET['tipo'] == "Dispositivo") {
         ?>
-        <form method="POST" action="../php/register.php?tipo=dispositivo">
+        <form method="POST" action="register.php?tipo=Dispositivo">
             <label>Identificador: </label><input type="text" name="id" value="<?php echo ultimoId("dispositivos"); ?>" readonly>
             <br>
             <label>Empresa: </label><input type="text" name="empresa">
@@ -113,8 +111,46 @@
             <input type="submit" value="Registrar dispositivo">
         </form>
         <?php
-            } elseif ($_GET['tipo'] == "usuario") {
-
+            } elseif ($_GET['tipo'] == "Empresa") {
+        ?>
+        <form method="POST" action="register.php?tipo=Empresa">
+            <label>Identificador: </label><input type="text" name="id" value="<?php echo ultimoId("empresas") ?>" readonly>
+            <br>
+            <label>Código de identificación fiscal (CIF): </label><input type="text" name="cif">
+            <br>
+            <label>Nombre completo: </label><input type="text" name="nombre">
+            <br>
+            <label>Correo electrónico: </label><input type="text" name="correo">
+            <br>
+            <label>Teléfono: </label><input type="text" name="telefono">
+            <br>
+            <label>Dirección: </label><input type="text" name="direccion">
+            <br>
+            <label>Código postal: </label><input type="text" name="cp">
+            <br>
+            <input type="submit" value="Registrar empresa">
+        </form>
+        <?php
+            } elseif ($_GET['tipo'] == "Usuario") {
+        ?>
+        <form method="POST" action="register.php?tipo=Usuario">
+            <label>Identificador: </label><input type="text" name="id" value="<?php echo ultimoId("usuarios"); ?>" readonly>
+            <br>
+            <label>Empresa: </label><input type="search" oninput="busqueda(this.value, 'empresa', 'empresas')"><span id="salida"></span>
+            <br>
+            <label>Nombre: </label><input type="text" name="nombre">
+            <br>
+            <label>Nombre de usuario: </label><input type="text" name="nombreUsuario" id="nombreUsuario" readonly>
+            <br>
+            <label>Correo electrónico: </label><input type="text" name="correo" id="correoElectronico" oninput="crearNombreUsuario()">
+            <br>
+            <label>Contraseña: </label><input type="text" name="contrasenia">
+            <br>
+            <label>Teléfono: </label><input type="text" name="telefono">
+            <br>
+            <input type="submit" value="Registrar usuario">
+        </form>
+        <?php
             }
         ?>
         <?php

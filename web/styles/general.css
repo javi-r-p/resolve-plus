@@ -18,13 +18,14 @@ section {
     padding: 20px;
 }
 section table {
-    width: 100%;
+    width: 90%;
+    margin: auto;
 }
 section table, th, td {
-    border: 1px solid #121212;
+    border-bottom: 1px solid #121212;
     border-collapse: collapse;
 }
-section th, td {
+section table, th, td {
     padding: 10px;
     text-align: center;
 }
@@ -84,6 +85,8 @@ footer {
     padding: 10px;
     width: 100%;
     border-radius: 7px;
+    bottom: 0;
+    clear: both;
 }
 footer p {
     text-align: center;
@@ -166,6 +169,25 @@ aside p:hover {
 header, main, footer {
     transition: margin-left 0.4s ease-out;
 }
+.charts {
+    width: 30%;
+    float: left;
+    border: none;
+}
+canvas {
+    width: 100%;
+    background-color: #FFFFFF;
+}
+#listadoIncidencias {
+    width: 40%;
+    display: inline;
+    float: right;
+    max-height: 60%;
+    overflow-y: auto;
+}
+hr {
+    border: 1px solid #121212;
+}
 @keyframes slideIn {
     0% {
         transform: translateX(-100%);
@@ -184,4 +206,6 @@ header, main, footer {
 }
 button {
     cursor: pointer;
+    background-color: transparent;
+    border: none;
 }
