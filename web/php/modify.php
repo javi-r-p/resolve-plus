@@ -23,7 +23,7 @@
         <header>
             <h3 class="inline">Modificar datos del usuario <?php echo $_SESSION['nombreUsuario']; ?></h3>
             <button class="generalButton float-right"><a href="../authentication.php?accion=logout">Cerrar sesión</a></button>
-            <button class="generalButton float-right"><a href="../index.php">Página principal</a></button>
+            <button class="generalButton float-right"><a href="../index.php">Dashboard</a></button>
         </header>
         <main>
 

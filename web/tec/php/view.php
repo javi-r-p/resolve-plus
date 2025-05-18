@@ -88,8 +88,8 @@
                             echo "<td>" . $tipo . "</td>\n";
                         }
                     }
-                    echo "<td><a href='php/edit.php?id=" . $resultados['id'] . "&tipo=" . $_GET['tipo'] . "'><img src='../../images/edit.png'></a></td>\n";                         
-                    echo "<td><a href='php/delete.php?id=" . $resultados['id'] . "&tipo=" . $_GET['tipo'] . "'><img src='../../images/delete.png'></a></td>\n";
+                    echo "<td><a href='edit.php?id=" . $resultados['id'] . "&tipo=" . $_GET['tipo'] . "'><img src='../../images/edit.png'></a></td>\n";                         
+                    echo "<td><a href='delete.php?id=" . $resultados['id'] . "&tipo=" . $_GET['tipo'] . "'><img src='../../images/delete.png'></a></td>\n";
                     echo "</tr>\n";
                 }
                 echo "</table>\n";
@@ -112,8 +112,8 @@
                     echo "<td>" . $resultados['nombre'] . "</td>\n";
                     echo "<td>" . $resultados['correo'] . "</td>\n";
                     echo "<td>" . $resultados['telefono'] . "</td>\n";
-                    echo "<td><a href='php/edit.php?id=" . $resultados['id'] . "&tipo=" . $_GET['tipo'] . "'><img src='../../images/edit.png'></a></td>\n";                         
-                    echo "<td><a href='php/delete.php?id=" . $resultados['id'] . "&tipo=" . $_GET['tipo'] . "'><img src='../../images/delete.png'></a></td>\n";
+                    echo "<td><a href='edit.php?id=" . $resultados['id'] . "&tipo=" . $_GET['tipo'] . "'><img src='../../images/edit.png'></a></td>\n";                         
+                    echo "<td><a href='delete.php?id=" . $resultados['id'] . "&tipo=" . $_GET['tipo'] . "'><img src='../../images/delete.png'></a></td>\n";
                     echo "</tr>\n";
                 }
                 echo "</table>\n";
@@ -133,7 +133,7 @@
                     echo "<td>" . date_format(date_create($resultados['fechaApertura']), "d/m/Y") . "</td>\n";
                     echo "<td>" . date_format(date_create($resultados['fechaCierreEsp']), "d/m/Y") . "</td>\n";
                     echo "<td>" . $resultados['nombre'] . " (" . $resultados['usuario'] . ")" ."</td>\n";
-                    echo "<td><a href='php/edit.php?id=" . $resultados['id'] . "&tipo=" . $_GET['tipo'] . "'><img src='../../images/edit.png'></a></td>\n";                         
+                    echo "<td><a href='edit.php?id=" . $resultados['id'] . "&tipo=" . $_GET['tipo'] . "'><img src='../../images/edit.png'></a></td>\n";                         
                     echo "</tr>\n";
                 }
                 echo "</table>\n"; 

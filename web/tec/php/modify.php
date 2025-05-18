@@ -31,7 +31,7 @@
         <button class="display-block float-left"><a href="../authentication.php?accion=logout"><img src="../../images/logout.png" alt="Cerrar sesión"></a></button>
         <button class="display-block float-left"><a href="modify.php?tipo=Tecnico"><img src="../../images/password.png" alt="Cambiar contraseña"></a></button>
         <button class="display-block float-right" onclick="cerrarMenu()"><img src="../../images/close.png" alt="Cerrar menú"></button>
-        <a href="../index.php">Página principal</a>
+        <a href="../index.php">Dashboard</a>
         <p>Gestión de dispositivos</p>
         <a href="registerForms.php?tipo=Dispositivo" class="margin-left">Registrar un dispositivo</a>
         <a href="view.php?tipo=Dispositivos" class="margin-left">Ver / modificar dispositivos registrados</a>

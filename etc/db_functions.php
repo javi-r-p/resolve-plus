@@ -23,8 +23,7 @@ function consulta ($formato, $tabla, $sentencia, $mostrarIconos, $enlaces) {
                 while ($resultados = mysqli_fetch_array($consulta)) {
                     echo "<tr>\n";
                     foreach (obtenerCampos($tabla) as $campo) {
-                        $nombreCampo = $campo->name;
-                        echo "<td>" . $resultados[$nombreCampo] . "</td>\n";
+                        echo "<td>" . $resultados[$campo->name] . "</td>\n";
                     }
                     if ($mostrarIconos) {
                         echo "<td><img src='../images/edit.png'></td>\n";                            
@@ -36,6 +35,13 @@ function consulta ($formato, $tabla, $sentencia, $mostrarIconos, $enlaces) {
                 break;
             case "desplegable":
 
+                break;
+            case "ninguno":
+                while ($resultados = mysqli_fetch_array($consulta)) {
+                    foreach (obtenerCampos($tabla) as $campo) {
+                        echo $resultados[$campo->name];
+                    }
+                }
                 break;
         }
         mysqli_free_result($consulta);

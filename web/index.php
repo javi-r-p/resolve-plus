@@ -30,7 +30,7 @@
             ?>
                <h2>Consulta el estado de tus incidencias</h2>
                <?php
-                  if (!consulta("tabla", "incidencias", "SELECT * FROM incidencias", FALSE, FALSE)) {
+                  if (!consulta("tabla", "incidencias", "SELECT * FROM incidencias WHERE usuario = " . $_SESSION['usuario'], FALSE, FALSE)) {
                      echo "<h2>No tienes ninguna incidencia registrada</h2>\n";
                   }
                ?>

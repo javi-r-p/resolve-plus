@@ -25,7 +25,7 @@ CREATE TABLE usuarios (
     telefono INT NOT NULL,
     bloqueado BOOLEAN NOT NULL DEFAULT 0, -- Si no está bloqueado 0, si lo está, 1
     CONSTRAINT PK_usuarios PRIMARY KEY (id),
-    CONSTRAINT FK_usuariosEmpresa FOREIGN KEY (empresa) REFERENCES empresas (id)
+    CONSTRAINT FK_usuariosEmpresa FOREIGN KEY (empresa) REFERENCES empresas (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 -- Tabla dispositivos
@@ -37,7 +37,7 @@ CREATE TABLE dispositivos (
     marca VARCHAR(20) NOT NULL,
     modelo VARCHAR(30) NOT NULL,
     CONSTRAINT PK_dispositivos PRIMARY KEY (id),
-    CONSTRAINT FK_dispositivosEmpresa FOREIGN KEY (empresa) REFERENCES empresas (id)
+    CONSTRAINT FK_dispositivosEmpresa FOREIGN KEY (empresa) REFERENCES empresas (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 -- Tabla equipos
@@ -51,7 +51,7 @@ CREATE TABLE equipos (
     tipo VARCHAR(20) NOT NULL,
     otros VARCHAR(500),
     CONSTRAINT PK_equipos PRIMARY KEY (id),
-    CONSTRAINT FK_equiposDispositivo FOREIGN KEY (id) REFERENCES dispositivos (id)
+    CONSTRAINT FK_equiposDispositivo FOREIGN KEY (id) REFERENCES dispositivos (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 -- Tabla impresoras
@@ -62,7 +62,7 @@ CREATE TABLE impresoras (
     metodoImpresion VARCHAR(25) NOT NULL,
     color BOOLEAN NOT NULL, -- Si no imprime a color 0, si imprime a color 1
     CONSTRAINT PK_impresoras PRIMARY KEY (id),
-    CONSTRAINT FK_impresorasDispositivo FOREIGN KEY (id) REFERENCES dispositivos (id)
+    CONSTRAINT FK_impresorasDispositivo FOREIGN KEY (id) REFERENCES dispositivos (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 -- Tabla moviles
@@ -73,7 +73,7 @@ CREATE TABLE moviles (
     almacenamiento VARCHAR(50) NOT NULL,
     sistema VARCHAR(25) NOT NULL,
     CONSTRAINT PK_moviles PRIMARY KEY (id),
-    CONSTRAINT FK_movilesDispositivo FOREIGN KEY (id) REFERENCES dispositivos (id)
+    CONSTRAINT FK_movilesDispositivo FOREIGN KEY (id) REFERENCES dispositivos (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 -- Tabla otros
@@ -82,7 +82,7 @@ CREATE TABLE otros (
     denominacion VARCHAR(35) NOT NULL,
     caracteristicas VARCHAR(1000) NOT NULL,
     CONSTRAINT PK_otros PRIMARY KEY (id),
-    CONSTRAINT FK_otrosDispositivo FOREIGN KEY (id) REFERENCES dispositivos (id)
+    CONSTRAINT FK_otrosDispositivo FOREIGN KEY (id) REFERENCES dispositivos (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 -- Tabla red
@@ -92,7 +92,7 @@ CREATE TABLE red (
     interfaces TINYINT NOT NULL,
     velocidadMaxima VARCHAR(15) NOT NULL,
     CONSTRAINT PK_red PRIMARY KEY (id),
-    CONSTRAINT FK_redDispositivo FOREIGN KEY (id) REFERENCES dispositivos (id)
+    CONSTRAINT FK_redDispositivo FOREIGN KEY (id) REFERENCES dispositivos (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 -- Tabla areas
@@ -119,8 +119,8 @@ CREATE TABLE areasTecnicos (
 	area TINYINT NOT NULL,
     tecnico SMALLINT NOT NULL,
     CONSTRAINT PK_areasTecnicos PRIMARY KEY (area, tecnico),
-    CONSTRAINT FK_areasTecnicosArea FOREIGN KEY (area) REFERENCES areas (id),
-    CONSTRAINT FK_areasTecnicosTecnico FOREIGN KEY (tecnico) REFERENCES tecnicos (id)
+    CONSTRAINT FK_areasTecnicosArea FOREIGN KEY (area) REFERENCES areas (id) ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT FK_areasTecnicosTecnico FOREIGN KEY (tecnico) REFERENCES tecnicos (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 -- Tabla incidencias
@@ -137,7 +137,7 @@ CREATE TABLE incidencias (
     desplazamiento BOOLEAN, -- Si no hay desplazamiento es 0, si lo hay es 1
     duracion TIME,
     CONSTRAINT PK_incidencias PRIMARY KEY (id),
-    CONSTRAINT FK_incidenciasUsuario FOREIGN KEY (usuario) REFERENCES usuarios (id)
+    CONSTRAINT FK_incidenciasUsuario FOREIGN KEY (usuario) REFERENCES usuarios (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 -- Tabla incidenciasAreas
@@ -145,8 +145,8 @@ CREATE TABLE incidenciasAreas (
 	incidencia INT NOT NULL,
     area TINYINT NOT NULL,
     CONSTRAINT PK_incidenciasAreas PRIMARY KEY (incidencia, area),
-    CONSTRAINT FK_incidenciasAreasIncidencia FOREIGN KEY (incidencia) REFERENCES incidencias (id),
-    CONSTRAINT FK_incidenciasAreasArea FOREIGN KEY (area) REFERENCES areas (id)
+    CONSTRAINT FK_incidenciasAreasIncidencia FOREIGN KEY (incidencia) REFERENCES incidencias (id) ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT FK_incidenciasAreasArea FOREIGN KEY (area) REFERENCES areas (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 -- Tabla dispositivosIncidencias
@@ -154,8 +154,8 @@ CREATE TABLE dispositivosIncidencias (
 	dispositivo INT NOT NULL,
     incidencia INT NOT NULL,
     CONSTRAINT PK_dispositivosIncidencias PRIMARY KEY (dispositivo, incidencia),
-    CONSTRAINT FK_dispositivosIncidenciasDispositivo FOREIGN KEY (dispositivo) REFERENCES dispositivos (id),
-    CONSTRAINT FK_dispositivosIncidenciasIncidencia FOREIGN KEY (incidencia) REFERENCES incidencias (id)
+    CONSTRAINT FK_dispositivosIncidenciasDispositivo FOREIGN KEY (dispositivo) REFERENCES dispositivos (id) ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT FK_dispositivosIncidenciasIncidencia FOREIGN KEY (incidencia) REFERENCES incidencias (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 -- Tabla intervenciones

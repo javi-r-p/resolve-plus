@@ -29,7 +29,7 @@ section table, th, td {
     padding: 10px;
     text-align: center;
 }
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 .inline {
@@ -173,6 +173,9 @@ header, main, footer {
     width: 30%;
     float: left;
     border: none;
+}
+.chartsStats {
+    width: 50%;
 }
 canvas {
     width: 100%;

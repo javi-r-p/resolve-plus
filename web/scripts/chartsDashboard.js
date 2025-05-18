@@ -1,5 +1,5 @@
 // Gráfico de incidencias por área
-fetch("json_query.php?tabla=incidenciasAreasAbiertas")
+fetch("json_query.php?q=incidenciasAreasAbiertas")
 .then((response) => response.json())
 .then((data) => {
     crearGrafico(data, "bar", "Incidencias por área",  "incidenciasAreas", ["#ff4d4d", "#fdff70", "#46a6ff", "#b668ff", "#ffc265"], "incidenciasAreas");
@@ -7,8 +7,8 @@ fetch("json_query.php?tabla=incidenciasAreasAbiertas")
 .catch((error) => {
     console.error("Error recuperando datos:", error);
 });
-// Gráfico de incidencias por técnico
-fetch("json_query.php?tabla=incidenciasAbiertas")
+// Gráfico de incidencias por criticidad
+fetch("json_query.php?q=incidenciasAbiertas")
 .then((response) => response.json())
 .then((data) => {
     crearGrafico(data, "doughnut", "Incidencias por criticidad", "incidenciasUrgentes", ["#ff4a4a", "#ffd549"], "incidenciasUrgencia");
