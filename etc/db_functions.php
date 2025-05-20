@@ -36,12 +36,8 @@ function consulta ($formato, $tabla, $sentencia, $mostrarIconos, $enlaces) {
             case "desplegable":
 
                 break;
-            case "ninguno":
-                while ($resultados = mysqli_fetch_array($consulta)) {
-                    foreach (obtenerCampos($tabla) as $campo) {
-                        echo $resultados[$campo->name];
-                    }
-                }
+            case "conteo":
+                
                 break;
         }
         mysqli_free_result($consulta);

@@ -2,14 +2,14 @@
 <head>
     <title>Estadísticas</title>
     <meta charset="UTF-8">
-    <meta viewport="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../images/favicon.ico">
     <link rel="stylesheet" href="../../styles/general.css">
     <script src="../../scripts/formsAndCss.js"></script>
     <script src="../../scripts/htrequests.js"></script>
     <script src="../../scripts/menuAndAnimations.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="../../scripts/chartsStats.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script>
 
     </script>
@@ -56,7 +56,7 @@
             <p>De las incidencias totales, <?php echo $numeroIncidenciasUrgencia['urgentes']; ?> son urgentes y <?php echo $numeroIncidenciasUrgencia['noUrgentes']; ?> no urgentes.</p>
             <p>De las incidencias urgentes, <?php echo $numeroIncidenciasUrgenciaEstado['urgentes']; ?> de ellas están abiertas, y de las no urgentes, hay abiertas <?php echo $numeroIncidenciasUrgenciaEstado['noUrgentes']; ?>.</p>
         </section>
-        <h4><a href="pdf.php?nombre=Informe+de+incidencias" target="_blank">Pulsa aquí para generar un informe</a></h4>
+        <h4><a href="pdf.php?titulo=Informe+de+incidencias" target="_blank">Generar un informe de incidencias</a></h4>
         <section class="charts chartsStats">
             <h3>Incidencias por área</h3>
             <canvas id="incidenciasAreas"></canvas>

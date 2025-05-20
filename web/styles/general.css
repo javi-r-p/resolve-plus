@@ -191,6 +191,15 @@ canvas {
 hr {
     border: 1px solid #121212;
 }
+button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+h4 a:any-link {
+    color: black;
+    text-decoration: underline;
+}
 @keyframes slideIn {
     0% {
         transform: translateX(-100%);
@@ -206,9 +215,4 @@ hr {
     100% {
         width: 0%;
     }
-}
-button {
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
 }
