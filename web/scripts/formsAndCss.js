@@ -1,14 +1,3 @@
-function updateTheme() {
-    var now = new Date();
-    var hours = now.getHours();
-    var minutes = now.getMinutes();
-    if ((hours > 21 || (hours === 21 && minutes >= 15)) || hours < 7) {
-        document.body.style.backgroundColor = "#121212";
-        document.body.style.color = "#FFFFFF";
-    }
-}
-updateTheme();
-setInterval(updateTheme, 60000);
 function mostrarCampos() {
     var valorSeleccionado = document.getElementById("seleccionDispositivo").value;
     var categorias = ["equipos", "impresoras", "moviles", "red", "otros"];
