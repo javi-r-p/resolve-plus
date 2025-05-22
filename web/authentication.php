@@ -31,7 +31,7 @@
             }
             $contrasenia = hash('sha512', $_POST['contrasenia']);
             // Consultar credenciales introducidas por el usuario en la base de datos
-            $consulta = mysqli_query($bbdd, "SELECT id,correo,contrasenia,nombre,nombreUsuario FROM usuarios WHERE $campo = '$usuario' AND contrasenia = '$contrasenia'");
+            $consulta = mysqli_query($bbdd, "SELECT id, correo, contrasenia, nombre, nombreUsuario, empresa FROM usuarios WHERE $campo = '$usuario' AND contrasenia = '$contrasenia'");
             $datosUsuario = mysqli_fetch_array($consulta);
             if (mysqli_num_rows($consulta) == 1) {
                 $consultaUsuarioBloqueado = mysqli_query($bbdd, "SELECT bloqueado,$campo FROM usuarios WHERE $campo = '$usuario'");
@@ -41,7 +41,14 @@
                     $_SESSION['usuario'] = $datosUsuario['id'];
                     $_SESSION['nombreUsuario'] = $datosUsuario['nombreUsuario'];
                     $_SESSION['nombre'] = $datosUsuario['nombre'];
-                    header("Location: index.php");
+                    $_SESSION['empresa'] = $datosUsuario['empresa'];
+                    if (isset($_SESSION['redireccion'])) {
+                        $redireccion = $_SESSION['redireccion'];
+                        unset($_SESSION['redireccion']);
+                        header("Location: $redireccion");
+                    } else {
+                        header("Location: index.php");
+                    }
                 } elseif ($usuarioBloqueado['bloqueado'] == 1) {
                     $error = "Acceso denegado";
                 }

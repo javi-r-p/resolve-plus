@@ -3,20 +3,25 @@
     require("../../etc/session.php");
     if (!isset($_GET['tipo'])) {
         die();
-    } elseif ($_GET['tipo'] == "Incidencia") {
+    } elseif ($_GET['tipo'] == "Incidencias") {
         $id = $_POST['id'];
         $descripcion = $_POST['descripcion'];
         $fechaApertura = $_POST['fechaApertura'];
         $fechaCierreEsp = $_POST['fechaCierreEsp'];
         $usuario = $_SESSION['usuario'];
-        $insercion = mysqli_query($bbdd, "INSERT INTO incidencias (id,descripcion,fechaApertura,fechaCierreEsp,usuario) VALUES ($id,'$descripcion','$fechaApertura','$fechaCierreEsp',$usuario)");
+        if ($_POST['urgente'] == "on") {
+            $urgente = 1;
+        } else {
+            $urgente = 0;
+        }
+        $insercion = mysqli_query($bbdd, "INSERT INTO incidencias (id, descripcion, urgente, fechaApertura, fechaCierreEsp, usuario) VALUES ($id,'$descripcion',$urgente,'$fechaApertura','$fechaCierreEsp',$usuario)");
         if ($insercion) {
             echo "<h1>La incidencia se ha registrado en el sistema</h1>";
             echo "<a href='../index.php'>Volver a la página principal</a>";
         } else {
             echo "<h1>Ha habido un error en el registro. Inténtalo de nuevo más tarde.";
         }
-    } elseif ($_GET['tipo'] == "Dispositivo") {
+    } elseif ($_GET['tipo'] == "Dispositivos") {
         $id = $_POST['id'];
         $empresa = $_POST['empresa'];
         $numeroSerie = $_POST['numeroSerie'];
@@ -56,7 +61,7 @@
         } else {
             echo "<h1>Ha habido un error en el registro. Inténtalo de nuevo más tarde.";
         }
-    } elseif ($_GET['tipo'] == "Usuario") {
+    } elseif ($_GET['tipo'] == "Usuarios") {
         $id = $_POST['id'];
         $empresa = $_POST['empresa'];
         $nombre = $_POST['nombre'];
@@ -71,7 +76,7 @@
         } else {
             echo "<h1>Ha habido un error en el registro. Inténtalo de nuevo más tarde.";
         }
-    } elseif ($_GET['tipo'] == "tecnico") {
+    } elseif ($_GET['tipo'] == "Tecnicos") {
         $id = $_POST['id'];
         $nombre = $_POST['nombre'];
         $correo = $_POST['correo'];
@@ -84,7 +89,7 @@
         } else {
             echo "<h1>Ha habido un error en el registro. Inténtalo de nuevo más tarde.";
         }
-    } elseif ($_GET['tipo'] == "Empresa") {
+    } elseif ($_GET['tipo'] == "Empresas") {
         $id = $_POST['id'];
         $cif = $_POST['cif'];
         $nombre = $_POST['nombre'];

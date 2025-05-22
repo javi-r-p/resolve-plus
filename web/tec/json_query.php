@@ -4,7 +4,7 @@
     if ($_GET['q'] == "incidenciasAreasAbiertas") {
         $consulta = mysqli_query($bbdd, "SELECT a.denominacion, COUNT(ia.incidencia) AS 'conteo' FROM areas a JOIN incidenciasAreas ia ON a.id = ia.area JOIN incidencias i ON ia.incidencia = i.id WHERE i.estado = 1 GROUP BY a.denominacion");
     } elseif ($_GET['q'] == "incidenciasAbiertas") {
-        $consulta = mysqli_query($bbdd, "SELECT COUNT(id) AS 'conteo' FROM incidencias WHERE estado = 1 GROUP BY urgente");
+        $consulta = mysqli_query($bbdd, "SELECT COUNT(id) AS 'conteo' FROM incidencias WHERE estado = 1 GROUP BY urgente ORDER BY urgente DESC");
     } elseif ($_GET['q'] == "incidenciasAreas") {
         $consulta = mysqli_query($bbdd, "SELECT a.denominacion, COUNT(ia.incidencia) AS 'conteo' FROM areas a JOIN incidenciasAreas ia ON a.id = ia.area JOIN incidencias i ON ia.incidencia = i.id GROUP BY a.denominacion");
     } elseif ($_GET['q'] == "incidencias") {

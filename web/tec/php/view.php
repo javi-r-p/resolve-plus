@@ -118,25 +118,60 @@
                 }
                 echo "</table>\n";
             } elseif ($_GET['tipo'] == "Incidencias") {
-                $consulta = mysqli_query($bbdd, "SELECT ic.id AS 'id', fechaApertura, fechaCierreEsp, nombre, usuario FROM incidencias ic INNER JOIN usuarios us ON usuario = us.id WHERE estado = 1");
-                echo "<table>\n";
-                echo "<tr>\n";
-                echo "<th>ID</th>\n";
-                echo "<th>Fecha de apertura</th>\n";
-                echo "<th>Fecha de cierre estimada</th>\n";
-                echo "<th>Usuario</th>\n";
-                echo "<th></th>\n";
-                echo "</tr>\n";
-                while ($resultados = mysqli_fetch_array($consulta)) {
-                    echo "<tr>\n";
-                    echo "<td>" . $resultados['id'] . "</td>\n";
-                    echo "<td>" . date_format(date_create($resultados['fechaApertura']), "d/m/Y") . "</td>\n";
-                    echo "<td>" . date_format(date_create($resultados['fechaCierreEsp']), "d/m/Y") . "</td>\n";
-                    echo "<td>" . $resultados['nombre'] . " (" . $resultados['usuario'] . ")" ."</td>\n";
-                    echo "<td><a href='edit.php?id=" . $resultados['id'] . "&tipo=" . $_GET['tipo'] . "'><img src='../../images/edit.png'></a></td>\n";                         
-                    echo "</tr>\n";
+                if (isset($_GET['id'])) {
+                    $consulta = mysqli_query($bbdd, "SELECT ic.id, urgente, descripcion, us.nombre AS 'usuario', empresa, fechaApertura, fechaCierreEsp FROM incidencias ic, usuarios us WHERE empresa = (SELECT id FROM empresas WHERE id = 1) AND ic.id = 3");
+                    $resultados = mysqli_fetch_array($consulta);
+                    echo "<p>Identificador: " . $resultados['id'] . "</p>\n";
+                    echo "<p>Urgente: ";
+                    if ($resultados['urgente'] == 0) {
+                        echo "NO";
+                    } else {
+                        echo "SÍ";
+                    }
+                    echo "</p>\n";
+                    echo "<p>Usuario: " . $resultados['usuario'];
+                    echo "<p>Descripción: " . $resultados['descripcion'] . "</p>\n";
+                    echo "";
+                } else {
+                    ?>
+                    <h4>Filtros y orden</h4>
+                    <label for="orden">Ordenar por</label><select id="orden">
+                        <option value="id">Identificador</option>
+                        <option value="urgente">Urgencia</option>
+                        <option value="fechaApertura">Fecha de apertura</option>
+                        <option value="Usuario">Usuario</option>
+                    </select>
+                    <label for="id">ID</label><input type="text" id="id">
+                    <label for="fechaApertura">Fecha de apertura</label><input type="date" id="fechaApertura">
+                    <label for="usuario">Usuario</label><input type="text" id="usuario">
+                    <hr>
+                    <?php
+                        $consulta = mysqli_query($bbdd, "SELECT ic.id AS 'id', urgente, fechaApertura, fechaCierreEsp, nombre, usuario FROM incidencias ic INNER JOIN usuarios us ON usuario = us.id WHERE estado = 1 ORDER BY urgente DESC");
+                        echo "<table>\n";
+                        echo "<tr>\n";
+                        echo "<th>ID</th>\n";
+                        echo "<th>Urgente</th>\n";
+                        echo "<th>Fecha de apertura</th>\n";
+                        echo "<th>Fecha de cierre estimada</th>\n";
+                        echo "<th>Usuario</th>\n";
+                        echo "<th></th>\n";
+                        echo "</tr>\n";
+                        while ($resultados = mysqli_fetch_array($consulta)) {
+                            echo "<tr>\n";
+                            echo "<td><a href='" . $_SERVER['PHP_SELF'] . "?tipo=Incidencias&id=" . $resultados['id'] . "'>" . $resultados['id'] . "</a></td>\n";
+                            if ($resultados['urgente'] == 0) {
+                                echo "<td>NO</td>\n";
+                            } else {
+                                echo "<td>SÍ</td>\n";
+                            }
+                            echo "<td>" . date_format(date_create($resultados['fechaApertura']), "d/m/Y") . "</td>\n";
+                            echo "<td>" . date_format(date_create($resultados['fechaCierreEsp']), "d/m/Y") . "</td>\n";
+                            echo "<td>" . $resultados['nombre'] . "</td>\n";
+                            echo "<td><a href='edit.php?id=" . $resultados['id'] . "&tipo=" . $_GET['tipo'] . "'><img src='../../images/edit.png'></a></td>\n";
+                            echo "</tr>\n";
+                        }
+                        echo "</table>\n";
                 }
-                echo "</table>\n"; 
             } else {
                 echo "<span>Los parámetros recibidos no son válidos.</span>\n";
             }

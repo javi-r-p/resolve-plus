@@ -31,12 +31,18 @@
             if (mysqli_num_rows($consulta) == 1) {
                 $consultaTecnicoBloqueado = mysqli_query($bbdd, "SELECT bloqueado FROM tecnicos WHERE id = '" . $datosTecnico['id'] . "'");
                 $tecnicoBloqueado = mysqli_fetch_array($consultaTecnicoBloqueado);
-                if ($tecnicoBloqueado['bloqueado'] == 0) {       
+                if ($tecnicoBloqueado['bloqueado'] == 0) {
                     $_SESSION['correo'] = $datosTecnico['correo'];
                     $_SESSION['tecnico'] = $datosTecnico['id'];
                     $_SESSION['nombreUsuario'] = $datosTecnico['nombreUsuario'];
                     $_SESSION['nombre'] = $datosTecnico['nombre'];
-                    header("Location: index.php");
+                    if (isset($_SESSION['redireccionTec'])) {
+                        $redireccion = $_SESSION['redireccionTec'];
+                        unset($_SESSION['redireccionTec']);
+                        header("Location: $redireccion");
+                    } else {
+                        header("Location: index.php");
+                    }
                 } else {
                     $error = "Acceso denegado";
                 }
