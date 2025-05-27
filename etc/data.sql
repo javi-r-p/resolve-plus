@@ -190,7 +190,6 @@ INSERT INTO incidencias VALUES
 (85, 9, 'El ordenador no reconoce una unidad flash USB.', 0, '2025-02-12', '2025-02-16', '2025-02-14', 0, 'Verificar la conexión USB y probar con otro puerto o unidad flash.', 0, '00:30:00'),
 (86, 4, 'No se pueden instalar nuevas aplicaciones en el equipo.', 1, '2025-01-01', '2025-01-05', '2025-01-03', 0, 'Verificar los permisos de administrador y el espacio disponible en el disco duro.', 0, '01:10:00'),
 (87, 7, 'La página web interna muestra errores de JavaScript que impiden la funcionalidad.', 1, '2025-04-12', '2025-04-16', '2025-04-14', 0, 'Limpiar la caché del navegador y contactar con el administrador de la web.', 0, '00:45:00');
-UPDATE incidencias SET solucion = NULL, fechaCierre = NULL, desplazamiento = NULL, duracion = NULL WHERE estado = 1;
 
 -- Tabla incidenciasAreas
 INSERT INTO incidenciasAreas (incidencia, area) VALUES
@@ -690,3 +689,19 @@ INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, model
 INSERT INTO red (id, producto, interfaces, velocidadMaxima) VALUES (199, 'Switch', 24, '1Gbps PoE');
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (200, 2, 'SNRED049CISCO', 'PNRED049CISCO', 'Cisco', 'C1000-8P-2G-L');
 INSERT INTO red (id, producto, interfaces, velocidadMaxima) VALUES (200, 'Switch', 8, '1Gbps');
+
+-- Extra
+UPDATE incidencias SET solucion = NULL, fechaCierre = NULL, desplazamiento = NULL, duracion = NULL WHERE estado = 1;
+INSERT INTO intervenciones VALUES (1, 3, 'Reinstalar servicio samba', '2025-05-27', '2025-05-27', '00:30');
+INSERT INTO intervenciones VALUES (2, 3, 'Almacenar las nuevas credenciales en todos los ordenadores de los usuarios', '2025-05-27', '2025-05-27', '02:00');
+INSERT INTO intervencionesTecnicos VALUES (1, 0, '', '1970-01-01', '1970-01-01', '00:00');
+INSERT INTO intervencionesTecnicos VALUES (2, 0, '', '1970-01-01', '1970-01-01', '00:00');
+UPDATE incidencias
+SET fechaCierre = '2025-05-27',
+	estado = 0,
+    solucion = 'No se ha podido encontrar el problema, por lo que se ha reinstalado el servicio preservando la configuración.',
+    desplazamiento = 0,
+    duracion = '02:30'
+WHERE id = 3;
+INSERT INTO dispositivos VALUES (201, 1, 'SRV00011', 'SRV01002', 'Dell', 'PowerEdge 160 4U');
+INSERT INTO equipos VALUES (201, 1, 'Intel Xeon 6745P', '128GB DDR5 7000MHz ECC', '16 x 4TB HDD SAS 20K RPM', 'Windows server 2025 Datacenter', 'Rack', NULL);
