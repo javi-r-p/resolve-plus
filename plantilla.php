@@ -12,15 +12,16 @@
 
     </script>
     <?php
+    
     ?>
 </head>
 <body>
     <header>
 
     </header>
-    <aside>
-
-    </aside>
+    <nav>
+        
+    </nav>
     <main>
 
     </main>

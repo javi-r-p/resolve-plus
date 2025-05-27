@@ -59,7 +59,7 @@
         } else {
             echo "<h1>Ha habido un error en el registro. Inténtalo de nuevo más tarde.";
         }
-    } elseif ($_GET['tipo'] == "tecnico") {
+    } elseif ($_GET['tipo'] == "Tecnico") {
         $id = $_POST['id'];
         $nombre = $_POST['nombre'];
         $correo = $_POST['correo'];

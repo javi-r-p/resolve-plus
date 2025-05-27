@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../images/favicon.ico">
     <link rel="stylesheet" href="../styles/general.css">
-    <script src="../scripts/menuAndAnimations.js"></script>
+    <!-- <script src="../scripts/menuAndAnimations.js"></script> -->
     <script src="../scripts/chartsDashboard.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script>
@@ -17,48 +17,69 @@
         include("../../etc/db_functions.php");
         $consultaNumeroIncidencias = mysqli_query($bbdd, "SELECT COUNT(*) AS 'totales', COUNT(CASE WHEN urgente = 1 THEN 1 END) AS 'urgentes', COUNT(CASE WHEN urgente = 0 THEN 1 END) AS 'noUrgentes' FROM incidencias WHERE estado = 1");
         $numeroIncidencias = mysqli_fetch_array($consultaNumeroIncidencias);
-        $consultaIncidenciasAntiguas = mysqli_query($bbdd, "SELECT COUNT(*) as 'conteo' FROM incidencias WHERE fechaApertura < DATE_SUB(NOW(), INTERVAL 4 DAY) AND estado = 1");
+        $consultaIncidenciasAntiguas = mysqli_query($bbdd, "SELECT COUNT(*) as 'totales' FROM incidencias WHERE fechaApertura < DATE_SUB(NOW(), INTERVAL 4 DAY) AND estado = 1");
         $incidenciasAntiguas = mysqli_fetch_array($consultaIncidenciasAntiguas);
+        $consultaIncidenciasActuales = mysqli_query($bbdd, "SELECT COUNT(*) as 'totales' FROM incidencias WHERE fechaApertura = NOW() AND estado = 1");
+        $incidenciasActuales = mysqli_fetch_array($consultaIncidenciasActuales);
+        $consultaIncidenciasActualesCerradas = mysqli_query($bbdd, "SELECT COUNT(*) as 'totales' FROM incidencias WHERE fechaCierre = '" . date("Y-m-d") . "' AND estado = 0");
+        $incidenciasActualesCerradas = mysqli_fetch_array($consultaIncidenciasActualesCerradas);
     ?>
 </head>
 <body>
     <header>
         <h1>Dashboard</h1>
-        <button onclick="abrirMenu()"><img src="../images/menu.png" alt="Abrir menú"></button>
+        <button class="display-block float-right"><a href="authentication.php?accion=logout"><img src="../images/logout.png" alt="Cerrar sesión"></a></button>
+        <button class="display-block float-right"><a href="php/modify.php?tipo=Tecnico"><img src="../images/password.png" alt="Cambiar contraseña"></a></button>
     </header>
-    <aside id="menuLateral" class="menuLateral">
-        <button class="display-block float-left"><a href="authentication.php?accion=logout"><img src="../images/logout.png" alt="Cerrar sesión"></a></button>
-        <button class="display-block float-left"><a href="php/modify.php?tipo=Tecnico"><img src="../images/password.png" alt="Cambiar contraseña"></a></button>
-        <button class="display-block float-right" onclick="cerrarMenu()"><img src="../images/close.png" alt="Cerrar menú"></button>
+    <nav>
+        <hr>
         <a href="index.php">Dashboard</a>
-        <p>Gestión de dispositivos</p>
-        <a href="php/registerForms.php?tipo=Dispositivo" class="margin-left">Registrar un dispositivo</a>
-        <a href="php/view.php?tipo=Dispositivos" class="margin-left">Ver dispositivos registrados</a>
-        <p>Gestión de empresas</p>
-        <a href="php/registerForms.php?tipo=Empresa" class="margin-left">Registrar una empresa</a>
-        <a href="php/view.php?tipo=Empresa" class="margin-left">Ver empresas registradas</a>
-        <p>Gestión de usuarios</p>
-        <a href="php/registerForms.php?tipo=Usuario" class="margin-left">Registrar un usuario</a>
-        <a href="php/view.php?tipo=Usuario" class="margin-left">Ver usuarios registrados</a>
-        <p>Gestión de técnicos</p>
-        <a href="php/registerForms.php?tipo=Tecnico" class="margin-left">Registrar un técnicos</a>
-        <a href="php/view.php?tipo=Tecnico" class="margin-left">Ver técnicos registrados</a>
+        <hr>
+        <p>Gestión</p>
+        <hr class="sameType">
+        <a href="php/management.php?tipo=Dispositivos">Dispositivos</a>
+        <a href="php/management.php?tipo=Usuarios">Usuarios</a>
+        <a href="php/management.php?tipo=Empresas">Empresas</a>
+        <a href="php/management.php?tipo=Tecnicos">Técnicos</a>
+        <hr>
+        <p>Otros</p>
+        <hr class="sameType">
         <a href="php/statistics.php">Estadísticas</a>
-    </aside>
-    <main>
-        <section>
-            <p>Hay <?php echo $numeroIncidencias['totales'] ?> incidencias abierta/s, <?php echo $numeroIncidencias['urgentes'] ?> urgente/s, y  <?php echo $numeroIncidencias['noUrgentes'] ?> no urgente/s.</p>
-            <hr>
-            <p>Hay <?php echo $incidenciasAntiguas['conteo'] ?> incidencia/s abiertas más de 4 días.</p>
+        <hr>
+    </nav>
+    <main class="w-88">
+        <section class="dataContainer">
+            <section class="data">
+                <span>Incidencias abiertas</span>
+                <span class="numbers"><?php echo $numeroIncidencias['totales'] ?></span>
+            </section>
+            <section class="data">
+                <span>Incidencias abiertas hoy</span>
+                <span class="numbers"><?php echo $incidenciasActuales['totales']; ?></span>
+            </section>
+            <section class="data">
+                <span>Incidencias abiertas más de 4 días</span>
+                <span class="numbers"><?php echo $incidenciasAntiguas['totales']; ?></span>
+            </section>
+            <section class="data">
+                <span>Incidencias cerradas hoy</span>
+                <span class="numbers"><?php echo $incidenciasActualesCerradas['totales']; ?></span>
+            </section>
         </section>
         <section class="charts">
+            <p>Incidencias por área</p>
             <canvas id="incidenciasAreas"></canvas>
         </section>
         <section class="charts">
+            <p>Incidencias por criticidad</p>
             <canvas id="incidenciasUrgentes"></canvas>
         </section>
+        <section class="charts">
+            <p>Incidencias por tipo de dispositivo</p>
+            <canvas id="incidenciasDispositivo"></canvas>
+        </section>
         <section id="listadoIncidencias">
-            <h2>Listado de incidencias</h2>
+            <h2>Incidencias</h2>
             <button class="display-block float-right"><a href="php/view.php?tipo=Incidencias"><img src="../images/unfold.png" alt="Expandir"></a></button>
             <table>
                 <tr>
@@ -83,7 +104,7 @@
             </table>
         </section>
     </main>
-    <footer>
+    <footer class="w-88">
         <p>Página desarrollada bajo la licencia GPL2.0</p>
     </footer>
 </body>

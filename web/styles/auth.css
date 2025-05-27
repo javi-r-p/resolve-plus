@@ -1,9 +1,9 @@
 @font-face {
-    font-family: inter;
-    src: url(inter.woff);
+    font-family: figtree;
+    src: url(Figtree-VariableFont_wght.ttf);
 }
 body {
-    font-family: inter, Arial, Helvetica, sans-serif;
+    font-family: figtree, Arial, Helvetica, sans-serif;
     font-size: 14px;
     height: 100%;
 }
@@ -83,7 +83,6 @@ input::placeholder {
 
 .login100-form-title {
     display: block;
-    font-family: inter;
     font-size: 30px;
     color: #333333;
     line-height: 1.2;
@@ -107,7 +106,6 @@ input::placeholder {
 }
 
 .input100 {
-    font-family: inter;
     font-size: 15px;
     color: #555555;
     line-height: 1.2;
@@ -138,7 +136,6 @@ input::placeholder {
 }
 
 .login100-form-btn {
-    font-family: inter;
     font-size: 15px;
     color: #FFFFFF;
     line-height: 1.2;

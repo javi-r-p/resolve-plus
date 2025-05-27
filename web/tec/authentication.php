@@ -71,7 +71,7 @@
                             <input type="submit" name="login" value="Iniciar sesión" class="login100-form-btn">
                         </div>
                         <?php echo "<span class='error'>$error</span>\n"; ?>
-                        <a href="../index.php">Acceso al portal de usuarios</a>
+                        <a href="../support.php">Acceso al portal de usuarios</a>
                     </div>
                 </form>
             </div>

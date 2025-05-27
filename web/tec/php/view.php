@@ -20,27 +20,23 @@
 <body>
     <header>
         <h1>Gestión de <?php echo strtolower($_GET['tipo']); ?></h1>
-        <button onclick="abrirMenu()"><img src="../../images/menu.png" alt="Abrir menú"></button>
     </header>
-    <aside id="menuLateral" class="menuLateral">
-        <button class="display-block float-left"><a href="../authentication.php?accion=logout"><img src="../../images/logout.png" alt="Cerrar sesión"></a></button>
-        <button class="display-block float-left"><a href="modify.php?tipo=Tecnico"><img src="../../images/password.png" alt="Cambiar contraseña"></a></button>
-        <button class="display-block float-right" onclick="cerrarMenu()"><img src="../../images/close.png" alt="Cerrar menú"></button>
-        <a href="../index.php">Dashboard</a>
-        <p>Gestión de dispositivos</p>
-        <a href="registerForms.php?tipo=Dispositivos" class="margin-left">Registrar un dispositivo</a>
-        <a href="view.php?tipo=Dispositivos" class="margin-left">Ver / modificar dispositivos registrados</a>
-        <p>Gestión de empresas</p>
-        <a href="registerForms.php?tipo=Empresas" class="margin-left">Registrar una empresa</a>
-        <a href="view.php?tipo=Empresas" class="margin-left">Ver / modificar empresas registradas</a>
-        <p>Gestión de usuarios</p>
-        <a href="registerForms.php?tipo=Usuarios" class="margin-left">Registrar un usuario</a>
-        <a href="view.php?tipo=Usuarios" class="margin-left">Ver usuarios registrados</a>
-        <p>Gestión de técnicos</p>
-        <a href="registerForms.php?tipo=Tecnicos" class="margin-left">Registrar un técnicos</a>
-        <a href="view.php?tipo=Tecnicos" class="margin-left">Ver / modificar técnicos registrados</a>
+    <nav>
+        <hr>
+        <strong><a href="../index.php">Dashboard</a></strong>
+        <hr>
+        <p>Gestión</p>
+        <hr class="sameType">
+        <a href="management.php?tipo=Dispositivos">Dispositivos</a>
+        <a href="management.php?tipo=Usuarios">Usuarios</a>
+        <a href="management.php?tipo=Empresas">Empresas</a>
+        <a href="management.php?tipo=Tecnicos">Técnicos</a>
+        <hr>
+        <p>Otros</p>
+        <hr class="sameType">
         <a href="statistics.php">Estadísticas</a>
-    </aside>
+        <hr>
+    </nav>
     <main>
         <?php
             if ($_GET['tipo'] == "Dispositivos") {
@@ -119,7 +115,7 @@
                 echo "</table>\n";
             } elseif ($_GET['tipo'] == "Incidencias") {
                 if (isset($_GET['id'])) {
-                    $consulta = mysqli_query($bbdd, "SELECT ic.id, urgente, descripcion, us.nombre AS 'usuario', empresa, fechaApertura, fechaCierreEsp FROM incidencias ic, usuarios us WHERE empresa = (SELECT id FROM empresas WHERE id = 1) AND ic.id = 3");
+                    $consulta = mysqli_query($bbdd, "SELECT ic.id, urgente, descripcion, us.nombre AS 'usuario', empresa, fechaApertura, fechaCierreEsp FROM incidencias ic, usuarios us WHERE empresa = (SELECT id FROM empresas WHERE id = 1) AND ic.id = " . $_GET['id']);
                     $resultados = mysqli_fetch_array($consulta);
                     echo "<p>Identificador: " . $resultados['id'] . "</p>\n";
                     echo "<p>Urgente: ";

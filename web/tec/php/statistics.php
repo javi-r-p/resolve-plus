@@ -27,29 +27,26 @@
 </head>
 <body>
     <header>
-        <h1>Estadísticas</h1>
-        <button onclick="abrirMenu()"><img src="../../images/menu.png" alt="Abrir menú"></button>
+        <button class="display-block float-right"><a href="../authentication.php?accion=logout"><img src="../../images/logout.png" alt="Cerrar sesión"></a></button>
+        <button class="display-block float-right"><a href="modify.php?tipo=Tecnico"><img src="../../images/password.png" alt="Cambiar contraseña"></a></button>
     </header>
-    <aside id="menuLateral" class="menuLateral">
-        <button class="display-block float-left"><a href="../authentication.php?accion=logout"><img src="../../images/logout.png" alt="Cerrar sesión"></a></button>
-        <button class="display-block float-left"><a href="modify.php?tipo=Tecnico"><img src="../../images/password.png" alt="Cambiar contraseña"></a></button>
-        <button class="display-block float-right" onclick="cerrarMenu()"><img src="../../images/close.png" alt="Cerrar menú"></button>
+    <nav>
+        <hr>
         <a href="../index.php">Dashboard</a>
-        <p>Gestión de dispositivos</p>
-        <a href="registerForms.php?tipo=Dispositivos" class="margin-left">Registrar un dispositivo</a>
-        <a href="view.php?tipo=Dispositivos" class="margin-left">Ver / modificar dispositivos registrados</a>
-        <p>Gestión de empresas</p>
-        <a href="registerForms.php?tipo=Empresas" class="margin-left">Registrar una empresa</a>
-        <a href="view.php?tipo=Empresas" class="margin-left">Ver / modificar empresas registradas</a>
-        <p>Gestión de usuarios</p>
-        <a href="registerForms.php?tipo=Usuarios" class="margin-left">Registrar un usuario</a>
-        <a href="view.php?tipo=Usuarios" class="margin-left">Ver usuarios registrados</a>
-        <p>Gestión de técnicos</p>
-        <a href="registerForms.php?tipo=Tecnicos" class="margin-left">Registrar un técnicos</a>
-        <a href="view.php?tipo=Tecnicos" class="margin-left">Ver / modificar técnicos registrados</a>
-        <a href="statistics.php">Estadísticas</a>
-    </aside>
-    <main>
+        <hr>
+        <p>Gestión</p>
+        <hr class="sameType">
+        <a href="management.php?tipo=Dispositivos">Gestión de dispositivos</a>
+        <a href="management.php?tipo=Usuarios">Gestión de usuarios</a>
+        <a href="management.php?tipo=Empresas">Gestión de empresas</a>
+        <a href="management.php?tipo=Tecnicos">Gestión de técnicos</a>
+        <hr>
+        <p>Otros</p>
+        <hr class="sameType">
+        <strong><a href="statistics.php">Estadísticas</a></strong>
+        <hr>
+    </nav>
+    <main class="w-88">
         <section>
             <h3>Incidencias totales</h3>
             <p>Hay <?php echo $numeroIncidenciasEstado['totales']; ?> incidencias registradas, <?php echo $numeroIncidenciasEstado['abiertas']; ?> abiertas y <?php echo $numeroIncidenciasEstado['cerradas']; ?> cerradas.</p>

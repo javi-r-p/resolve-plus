@@ -1,6 +1,6 @@
 @font-face {
-    font-family: inter;
-    src: url(inter.woff);
+    font-family: figtree;
+    src: url(Figtree-VariableFont_wght.ttf);
 }
 * {
     margin: 0px;
@@ -8,7 +8,7 @@
     box-sizing: border-box;
 }
 body {
-    font-family: inter, Arial, Helvetica, sans-serif;
+    font-family: figtree, Arial, Helvetica, sans-serif;
 }
 section {
     border: 1px solid #121212;
@@ -21,6 +21,9 @@ section table {
     width: 90%;
     margin: auto;
 }
+.viewTable {
+    width: 100%;
+}
 section table, th, td {
     border-bottom: 1px solid #121212;
     border-collapse: collapse;
@@ -31,6 +34,8 @@ section table, th, td {
 }
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
+    display: inline;
+    margin: auto;
 }
 .inline {
     display: inline;
@@ -71,22 +76,26 @@ input[type=submit] {
     position: relative;
 }
 textarea::placeholder {
-    font-family: opensans, Arial, Helvetica, sans-serif;
+    font-family: figtree, Arial, Helvetica, sans-serif;
 }
 header {
-    background-color: #eeeeee;
+    background-color: #588dff;
     padding: 20px;
-    margin-bottom: 10px;
+    color: #FFFFFF;
+    /* position: relative; */
+    top: 0;
+    right: 0;
+    display: block;
 }
 footer {
     text-align: center;
     color: white;
     background-color: #121212;
     padding: 10px;
-    width: 100%;
-    border-radius: 7px;
     bottom: 0;
+    right: 0;
     clear: both;
+    position: fixed;
 }
 footer p {
     text-align: center;
@@ -99,66 +108,66 @@ footer button {
     margin-left: 0.2%;
     margin-right: 0.2%;
 }
+footer, header, main {
+    width: 92%;
+    float: right;
+}
 .hidden {
     display: none;
 }
 #salida {
     color: red;
 }
-header button, aside button {
+header button {
     border: none;
     background-color: transparent;
 }
-aside button {
-    top: 1%;
-    position: absolute;
-}
-aside button:nth-last-of-type(1), aside button:nth-of-type(2) {
-    left: 2%;
-}
-aside button:nth-of-type(3) {
-    left: 92%;
-}
-aside a:any-link, aside a, aside p {
-    text-decoration: none;
-    display: block;
-    color: #424242;
-    transition: 0.3s ease-in-out;
-	padding: 2% 2% 2% 8%;
-    font-size: larger;
-    font-weight: bold;
-}
-aside a:any-link:hover, aside a:hover {
-    color: black;
-}
-aside p:hover {
-    cursor: default;
-}
-.margin-left {
-    margin-left: 10%;
-}
-#menuLateral {
-    display: none;
-    transition: 0.4s;
-}
-.body {
-    /*transition: margin-left 0.5s;*/
-    display: block;
-}
-.menuLateral {
-    /*display: block;*/
-    width: 22.5%;
-    background-color: #FFFFFF;
-    border-right: 2px solid #121212;
-    z-index: 1;
+nav {
+    width: 8%;
+    background-color: #588dff;
+    color: #FFFFFF;
     height: 100%;
     position: fixed;
     top: 0;
     left: 0;
     overflow-x: hidden;
-    padding-left: 2%;
     padding-top: 4%;
-    animation: slideIn 0.3s ease-out;
+}
+nav button {
+    top: 1%;
+    position: absolute;
+}
+nav button:nth-last-of-type(1), nav button:nth-of-type(2) {
+    left: 2%;
+}
+nav button:nth-of-type(3) {
+    left: 92%;
+}
+nav a:any-link, nav a {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+	padding: 4% 2% 4% 8%;
+}
+nav p {
+    padding: 5% 2% 5% 8%;
+    color: inherit;
+}
+nav a:any-link:hover, nav a:hover {
+    text-decoration: underline;
+}
+nav hr {
+    border: 1px solid #FFFFFF;
+    margin: 5%;
+}
+.sameType {
+    margin: 5% 10% 5% 10%;
+}
+.margin-left {
+    margin-left: 10%;
+}
+.body {
+    display: block;
 }
 .display-block {
     display: block;
@@ -166,13 +175,13 @@ aside p:hover {
 .display-none {
     display: none;
 }
-header, main, footer {
-    transition: margin-left 0.4s ease-out;
-}
 .charts {
-    width: 30%;
+    width: 33%;
     float: left;
     border: none;
+}
+.charts p {
+    text-align: center;
 }
 .chartsStats {
     width: 50%;
@@ -181,11 +190,15 @@ canvas {
     width: 100%;
     background-color: #FFFFFF;
 }
-#listadoIncidencias {
+#listadoSolicitudes {
     width: 40%;
     display: inline;
     float: right;
     max-height: 60%;
+    overflow-y: auto;
+}
+#listadoIncidencias {
+    width: 80%;
     overflow-y: auto;
 }
 hr {
@@ -200,19 +213,86 @@ h4 a:any-link {
     color: black;
     text-decoration: underline;
 }
-@keyframes slideIn {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(0%);
-    }
+.dataContainer {
+    display: flex;
+    border: none;
 }
-@keyframes slideOut {
-    0% {
-        width: 22.5%;
-    }
-    100% {
-        width: 0%;
-    }
+.data {
+    border: none;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.151);
+    width: 22.5%;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: smaller;
+}
+.data:nth-child(1) {
+    border-left: 0.25rem solid #ff4343;
+}
+.data:nth-child(2) {
+    border-left: 0.25rem solid #ff9d4c;
+}
+.data:nth-child(3) {
+    border-left: 0.25rem solid #ff4343;
+}
+.data:nth-child(4) {
+    border-left: 0.25rem solid #37a037;
+}
+.numbers {
+    font-size: 2rem;
+    display: block;
+}
+.view {
+    z-index: 1;
+    transition: 0.4s;
+    background-color: #f2f2ff;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.253);
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 1%;
+    position: fixed;
+    right: 30%;
+    left: 30%;
+    height: 40%;
+    overflow-y: auto;
+    resize: vertical;
+}
+.fixed-button {
+    position: sticky;
+    top: 0;
+}
+.center {
+    text-align: center;
+}
+div input {
+    height: 10%;
+    width: 30%;
+}
+div input[type=submit] {
+    border: 1px solid #121212;
+    background-color: transparent;
+    color: #000000;
+}
+div input[type=submit]:hover {
+    border: none;
+    background-color: #121212;
+    color: #FFFFFF;
+}
+header button, header a:any-link, header a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: medium;
+}
+header a:any-link:hover, header a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+fieldset {
+    border: none;
+}
+td a:any-link {
+    color: #000000;
+}
+#numeroSerie {
+    display: inline;
 }

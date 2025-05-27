@@ -20,27 +20,23 @@
 <body>
     <header>
         <h1>Registrar <?php echo $_GET['tipo']; ?></h1>
-        <button onclick="abrirMenu()"><img src="../../images/menu.png" alt="Abrir menú"></button>
     </header>
-    <aside id="menuLateral" class="menuLateral">
-        <button class="display-block float-left"><a href="../authentication.php?accion=logout"><img src="../../images/logout.png" alt="Cerrar sesión"></a></button>
-        <button class="display-block float-left"><a href="modify.php?tipo=Tecnico"><img src="../../images/password.png" alt="Cambiar contraseña"></a></button>
-        <button class="display-block float-right" onclick="cerrarMenu()"><img src="../../images/close.png" alt="Cerrar menú"></button>
-        <a href="../index.php">Dashboard</a>
-        <p>Gestión de dispositivos</p>
-        <a href="registerForms.php?tipo=Dispositivos" class="margin-left">Registrar un dispositivo</a>
-        <a href="view.php?tipo=Dispositivos" class="margin-left">Ver / modificar dispositivos registrados</a>
-        <p>Gestión de empresas</p>
-        <a href="registerForms.php?tipo=Empresas" class="margin-left">Registrar una empresa</a>
-        <a href="view.php?tipo=Empresas" class="margin-left">Ver / modificar empresas registradas</a>
-        <p>Gestión de usuarios</p>
-        <a href="registerForms.php?tipo=Usuarios" class="margin-left">Registrar un usuario</a>
-        <a href="view.php?tipo=Usuarios" class="margin-left">Ver usuarios registrados</a>
-        <p>Gestión de técnicos</p>
-        <a href="registerForms.php?tipo=Tecnicos" class="margin-left">Registrar un técnicos</a>
-        <a href="view.php?tipo=Tecnicos" class="margin-left">Ver / modificar técnicos registrados</a>
+    <nav>
+        <hr>
+        <strong><a href="../index.php">Dashboard</a></strong>
+        <hr>
+        <p>Gestión</p>
+        <hr class="sameType">
+        <a href="management.php?tipo=Dispositivos">Dispositivos</a>
+        <a href="management.php?tipo=Usuarios">Usuarios</a>
+        <a href="management.php?tipo=Empresas">Empresas</a>
+        <a href="management.php?tipo=Tecnicos">Técnicos</a>
+        <hr>
+        <p>Otros</p>
+        <hr class="sameType">
         <a href="statistics.php">Estadísticas</a>
-    </aside>
+        <hr>
+    </nav>
     <main>
         <?php
             if (!isset($_GET['tipo']) OR empty($_GET['tipo'])) {
@@ -49,17 +45,17 @@
             } elseif ($_GET['tipo'] == "Dispositivo") {
         ?>
         <form method="POST" action="register.php?tipo=Dispositivo">
-            <label>Identificador: </label><input type="text" name="id" value="<?php echo ultimoId("dispositivos"); ?>" readonly>
+            <label>Identificador: </label><input type="text" name="id" value="<?php echo ultimoId("dispositivos"); ?>" readonly required>
             <br>
-            <label>Empresa: </label><input type="text" name="empresa">
+            <label>Empresa: </label><input type="text" name="empresa" required>
             <br>
-            <label>Número de serie: </label><input type="text" name="numeroSerie">
+            <label>Número de serie: </label><input type="text" name="numeroSerie" required>
             <br>
-            <label>Número de producto: </label><input type="text" name="numeroProducto">
+            <label>Número de producto: </label><input type="text" name="numeroProducto" required>
             <br>
-            <label>Marca: </label><input type="text" name="marca">
+            <label>Marca: </label><input type="text" name="marca" required>
             <br>
-            <label>Modelo: </label><input type="text" name="modelo">
+            <label>Modelo: </label><input type="text" name="modelo" required>
             <br>
             <label for="dispositivo">Selecciona un tipo de dispositivo:</label>
             <select name="tipoDispositivo" id="seleccionDispositivo" oninput="mostrarCampos()">

@@ -2,23 +2,34 @@
 fetch("json_query.php?q=incidenciasAreasAbiertas")
 .then((response) => response.json())
 .then((data) => {
-    crearGrafico(data, "bar", "Incidencias por área",  "incidenciasAreas", ["#ff4d4d", "#fdff70", "#46a6ff", "#b668ff", "#ffc265"], "incidenciasAreas");
-})
-.catch((error) => {
-    console.error("Error recuperando datos:", error);
-});
-// Gráfico de incidencias por criticidad
-fetch("json_query.php?q=incidenciasAbiertas")
-.then((response) => response.json())
-.then((data) => {
-    crearGrafico(data, "doughnut", "Incidencias por criticidad", "incidenciasUrgentes", ["#ff4a4a", "#ffd549"], "incidenciasUrgencia");
+    crearGrafico(data, "bar", "incidenciasAreas", ["#D1D5DE", "#B7B6C2", "#837569", "#657153", "#8AAA79"], "incidenciasAreas", true, true, false, true, false);
 })
 .catch((error) => {
     console.error("Error recuperando datos:", error);
 });
 
+// Gráfico de incidencias por criticidad
+fetch("json_query.php?q=incidenciasAbiertas")
+.then((response) => response.json())
+.then((data) => {
+    crearGrafico(data, "doughnut", "incidenciasUrgentes", ["#ff4a4a", "#15a115"], "incidenciasUrgencia", false, false, false, false, true);
+})
+.catch((error) => {
+    console.error("Error recuperando datos:", error);
+});
+
+// Gráfico de incidencias por tipo de dispositivo
+fetch("json_query.php?q=incidenciasDispositivoAbiertas")
+.then((response) => response.json())
+.then((data) => {
+    crearGrafico(data, "bar", "incidenciasDispositivo", ["#CDC392", "#E8E5DA", "#9EB7E5", "#648DE5", "#304C89"], "incidenciasDispositivo", true, true, false, true, false)
+})
+.catch((error) => {
+    console.error("Error recuperando datos: ", error)
+})
+
 // Función de creación de gráficos
-function crearGrafico(datos, tipo, titulo, id, colores, tabla) {
+function crearGrafico(datos, tipo, id, colores, tabla, lineasY, ejeY, lineasX, ejeX, leyenda) {
     if (tabla == "incidenciasUrgencia") {
         valoresX = ["Urgentes", "No urgentes"]
     } else {
@@ -34,17 +45,27 @@ function crearGrafico(datos, tipo, titulo, id, colores, tabla) {
             }]
         },
         options: {
-            legend: { display: false },
+            legend: {
+                display: leyenda
+            },
             scales: {
                 yAxes: [{
+                    gridLines: {
+                        display: lineasY
+                    },
                     ticks: {
+                        display: ejeY,
                         beginAtZero: true
                     }
+                }],
+                xAxes: [{
+                    gridLines: {
+                        display: lineasX
+                    },
+                    ticks: {
+                        display: ejeX
+                    }
                 }]
-            },
-            title: {
-                display: true,
-                text: titulo
             }
         }
     });

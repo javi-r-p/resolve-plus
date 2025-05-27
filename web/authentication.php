@@ -47,7 +47,7 @@
                         unset($_SESSION['redireccion']);
                         header("Location: $redireccion");
                     } else {
-                        header("Location: index.php");
+                        header("Location: support.php");
                     }
                 } elseif ($usuarioBloqueado['bloqueado'] == 1) {
                     $error = "Acceso denegado";
