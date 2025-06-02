@@ -1,5 +1,5 @@
 // Gráfico de incidencias por área
-fetch("../json_query.php?q=incidenciasAreas")
+fetch("json_query.php?q=incidenciasAreas")
 .then((response) => response.json())
 .then((data) => {
     crearGrafico(data, "bar", "incidenciasAreas", ["#D1D5DE", "#B7B6C2", "#837569", "#657153", "#8AAA79"], "incidenciasAreas", true, true, false, true, false);
@@ -9,17 +9,17 @@ fetch("../json_query.php?q=incidenciasAreas")
 });
 
 // Gráfico de incidencias por criticidad
-fetch("../json_query.php?q=incidencias")
+fetch("json_query.php?q=incidencias")
 .then((response) => response.json())
 .then((data) => {
-    crearGrafico(data, "doughnut", "incidenciasUrgentes", ["#ff4a4a", "#15a115"], "incidenciasUrgencia", false, false, false, false, true);
+    crearGrafico(data, "doughnut", "incidenciasUrgentes", ["#ff4a4a", "#609966"], "incidenciasUrgencia", false, false, false, false, true);
 })
 .catch((error) => {
     console.error("Error recuperando datos: ", error);
 });
 
 // Gráfico de incidencias por mes
-fetch("../json_query.php?q=incidenciasMes")
+fetch("json_query.php?q=incidenciasMes")
 .then((response) => response.json())
 .then((data) => {
     crearGrafico(data, "line", "incidenciasMes", ["#85C1E9"], "incidenciasMes", true, true, false, true, false)
@@ -29,7 +29,7 @@ fetch("../json_query.php?q=incidenciasMes")
 })
 
 // Gráfico de incidencias por tipo de dispositivo
-fetch("../json_query.php?q=incidenciasDispositivo")
+fetch("json_query.php?q=incidenciasDispositivo")
 .then((response) => response.json())
 .then((data) => {
     crearGrafico(data, "bar", "incidenciasDispositivo", ["#CDC392", "#E8E5DA", "#9EB7E5", "#648DE5", "#304C89"], "incidenciasDispositivo", true, true, false, true, false)

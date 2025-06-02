@@ -1,3 +1,4 @@
+/* Estilos generales */
 @font-face {
     font-family: figtree;
     src: url(Figtree-VariableFont_wght.ttf);
@@ -7,276 +8,30 @@
     padding: 0px;
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: figtree, Arial, Helvetica, sans-serif;
 }
-section {
-    border: 1px solid #121212;
-    border-radius: 5px;
-    margin: auto;
-    width: 80%;
-    padding: 20px;
-}
-section table {
+
+/* Estilos de disposición de la página */
+footer, header, main {
     width: 90%;
-    margin: auto;
-}
-.viewTable {
-    width: 100%;
-}
-section table, th, td {
-    border-bottom: 1px solid #121212;
-    border-collapse: collapse;
-}
-section table, th, td {
-    padding: 10px;
-    text-align: center;
-}
-h1, h2, h3, h4, h5, h6 {
-    text-align: center;
-    display: inline;
-    margin: auto;
-}
-.inline {
-    display: inline;
-}
-.float-right {
     float: right;
 }
-.float-left {
-    float: left;
-}
-.generalButton, .generalButton a {
-    border-radius: 5px;
-    background-color: #121212;
+header, nav, footer {
+    background-color: #222831;
     color: #FFFFFF;
-    text-decoration: none;
-    padding: 10px;
-    margin: 5px;
-}
-input {
-    border: 1px solid #121212;
-    border-radius: 5px;
-    width: 10%;
-    height: 3%;
-    font-weight: bold;
-}
-input:read-only {
-    font-weight: normal;
-}
-input[type=submit] {
-    background-color: #121212;
-    color: #FFFFFF;
-    cursor: pointer;
-    border: none;
-}
-#visibilidadContrasenia, #visibilidadContrasenia2 {
-    width: 1%;
-    cursor: pointer;
-    position: relative;
-}
-textarea::placeholder {
-    font-family: figtree, Arial, Helvetica, sans-serif;
 }
 header {
-    background-color: #588dff;
     padding: 20px;
-    color: #FFFFFF;
-    /* position: relative; */
     top: 0;
     right: 0;
     display: block;
-}
-footer {
-    text-align: center;
-    color: white;
-    background-color: #121212;
-    padding: 10px;
-    bottom: 0;
-    right: 0;
-    clear: both;
-    position: fixed;
-}
-footer p {
-    text-align: center;
-    font-size: large;
-}
-footer button {
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    margin-left: 0.2%;
-    margin-right: 0.2%;
-}
-footer, header, main {
-    width: 92%;
-    float: right;
-}
-.hidden {
-    display: none;
-}
-#salida {
-    color: red;
-}
-header button {
-    border: none;
-    background-color: transparent;
-}
-nav {
-    width: 8%;
-    background-color: #588dff;
-    color: #FFFFFF;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    padding-top: 4%;
-}
-nav button {
-    top: 1%;
-    position: absolute;
-}
-nav button:nth-last-of-type(1), nav button:nth-of-type(2) {
-    left: 2%;
-}
-nav button:nth-of-type(3) {
-    left: 92%;
-}
-nav a:any-link, nav a {
-    text-decoration: none;
-    display: block;
-    color: inherit;
-	padding: 4% 2% 4% 8%;
-}
-nav p {
-    padding: 5% 2% 5% 8%;
-    color: inherit;
-}
-nav a:any-link:hover, nav a:hover {
-    text-decoration: underline;
-}
-nav hr {
-    border: 1px solid #FFFFFF;
-    margin: 5%;
-}
-.sameType {
-    margin: 5% 10% 5% 10%;
-}
-.margin-left {
-    margin-left: 10%;
-}
-.body {
-    display: block;
-}
-.display-block {
-    display: block;
-}
-.display-none {
-    display: none;
-}
-.charts {
-    width: 33%;
-    float: left;
-    border: none;
-}
-.charts p {
-    text-align: center;
-}
-.chartsStats {
-    width: 50%;
-}
-canvas {
-    width: 100%;
-    background-color: #FFFFFF;
-}
-#listadoSolicitudes {
-    width: 40%;
-    display: inline;
-    float: right;
-    max-height: 60%;
-    overflow-y: auto;
-}
-#listadoIncidencias {
-    width: 80%;
-    overflow-y: auto;
-}
-hr {
-    border: 1px solid #121212;
-}
-button {
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-}
-h4 a:any-link {
-    color: black;
-    text-decoration: underline;
-}
-.dataContainer {
-    display: flex;
-    border: none;
-}
-.data {
-    border: none;
-    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.151);
-    width: 22.5%;
-    display: inline-block;
-    text-transform: uppercase;
-    font-size: smaller;
-}
-.data:nth-child(1) {
-    border-left: 0.25rem solid #ff4343;
-}
-.data:nth-child(2) {
-    border-left: 0.25rem solid #ff9d4c;
-}
-.data:nth-child(3) {
-    border-left: 0.25rem solid #ff4343;
-}
-.data:nth-child(4) {
-    border-left: 0.25rem solid #37a037;
-}
-.numbers {
-    font-size: 2rem;
-    display: block;
-}
-.view {
-    z-index: 1;
     transition: 0.4s;
-    background-color: #f2f2ff;
-    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.253);
-    border-radius: 5px;
-    margin: 0 auto;
-    margin-top: 10%;
-    padding: 1%;
-    position: fixed;
-    right: 30%;
-    left: 30%;
-    height: 40%;
-    overflow-y: auto;
-    resize: vertical;
-}
-.fixed-button {
-    position: sticky;
-    top: 0;
-}
-.center {
+    font-size: 1rem;
     text-align: center;
-}
-div input {
-    height: 10%;
-    width: 30%;
-}
-div input[type=submit] {
-    border: 1px solid #121212;
-    background-color: transparent;
-    color: #000000;
-}
-div input[type=submit]:hover {
-    border: none;
-    background-color: #121212;
-    color: #FFFFFF;
 }
 header button, header a:any-link, header a {
     color: #FFFFFF;
@@ -287,12 +42,253 @@ header a:any-link:hover, header a:hover {
     color: #FFFFFF;
     text-decoration: underline;
 }
-fieldset {
+nav {
+    width: 10%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 4%;
+}
+nav a:any-link, nav a {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+	padding: 4% 2% 4% 8%;
+}
+nav a:any-link:hover, nav a:hover {
+    text-decoration: underline;
+}
+nav p {
+    padding: 5% 2% 5% 8%;
+}
+nav hr {
+    border: 1px solid #FFFFFF;
+    margin: 5%;
+}
+.sameType {
+    margin: 5% 10% 5% 10%;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    right: 0;
+    clear: both;
+}
+footer p {
+    text-align: center;
+    font-size: large;
+    display: inline;
+    vertical-align: middle;
+}
+footer button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 0.2%;
+    margin-right: 0.2%;
+}
+footer a img {
+    width: 2.5%;
+    vertical-align: middle;
+    float: right;
+}
+
+/* Encabezados, tablas e imágenes */
+/* Encabezados */
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    display: inline;
+    margin: auto;
+}
+h4 a:any-link {
+    color: black;
+    text-decoration: underline;
+}
+
+/* Tablas */
+
+/* Imágenes */
+img {
+    vertical-align: middle;
+}
+
+/* Clases */
+/* .viewTable se utiliza en archivos de vista */
+.viewTable {
+    width: 90%;
+    margin: 2% auto 2% auto;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.37);
+}
+
+/* .viewTableSmall se utiliza en archivos de vista pero muestra una anchura menor y márgenes distintos */
+.viewTableSmall {
+    width: 40%;
+    margin: 1% auto auto 2%;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.150);
+}
+
+/* Estilos comunes a .viewTable y .viewTableSmall */
+.viewTable, .viewTableSmall, th, td {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    padding: 10px;
+    text-align: center;
+}
+.viewTable th, .viewTableSmall th {
+    background-color: #609966;
+    color: #FFFFFF;
+}
+.viewTable tr:nth-of-type(2n), .viewTableSmall tr:nth-of-type(2n) {
+    background-color: #F6F6F6;
+}
+.viewTable th:nth-of-type(1), .viewTableSmall th:nth-of-type(1) {
+    border-top-left-radius: 7px;
+}
+.viewTable th:nth-last-of-type(1), .viewTableSmall th:nth-last-of-type(1) {
+    border-top-right-radius: 7px;
+}
+.viewTable tr:nth-last-of-type(1) > td:nth-last-of-type(1), .viewTableSmall tr:nth-last-of-type(1) > td:nth-last-of-type(1) {
+    border-bottom-right-radius: 7px;
+}
+.viewTable tr:nth-last-of-type(1) > td:nth-of-type(1), .viewTableSmall tr:nth-last-of-type(1) > td:nth-of-type(1) {
+    border-bottom-left-radius: 7px;
+}
+.viewTable tr > th, .viewTableSmall tr > th {
+    position: sticky;
+    top: 0;
+}
+
+/* .view se utiliza para las ventanas emergentes */
+.view {
+    z-index: 1;
+    background-color: #F2F2FF;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.253);
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 1%;
+    position: fixed;
+    right: 30%;
+    left: 30%;
+    height: 35%;
+    overflow-y: auto;
+}
+.view p a:any-link {
+    color: #000000;
+}
+.view img {
+    width: 30%;
+    position: relative;
+    margin-right: 0;
+}
+/* .eliminar se utiliza para las ventanas de confirmación de eliminación */
+.eliminar {
+    z-index: 1;
+    background-color: #F2F2FF;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.253);
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 1%;
+    position: fixed;
+    right: 40%;
+    left: 40%;
+    height: 15%;
+    overflow: hidden;
+    resize: none;
+}
+.eliminar h3, .eliminar h4 {
+    text-align: center;
+    display: block;
+}
+
+/* .viewFullIssue se utiliza para la vista de incidencias */
+.viewFullIssue {
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.253);
+    width: 95%;
+    margin: 2% auto 2% auto;
+    padding: 10px;
+    border-radius: 7px;
+}
+.viewFullIssue ul {
+    list-style: none;
+}
+.viewFullIssue section {
+    border-radius: 7px;
+    border: 1px solid #222831;
+}
+
+/* Otras clases */
+.display-block {
+    display: block;
+}
+.display-none {
+    display: none;
+}
+.inline {
+    display: inline;
+}
+.float-right {
+    float: right;
+}
+.float-left {
+    float: left;
+}
+.fixed-button {
+    position: sticky;
+    top: 0;
+}
+.center {
+    text-align: center;
+}
+.hidden {
+    display: none;
+}
+.red {
+    background-color: #FF4A4A;
+    color: #FFFFFF;
+}
+.green {
+    background-color: #609966;
+    color: #FFFFFF;
+}
+.w-80 {
+    width: 80%;
+}
+
+/* Estilos con selectores CSS */
+section {
+    border: 1px solid #121212;
+    border-radius: 5px;
+    margin: auto;
+    width: 80%;
+    padding: 20px;
+}
+hr {
+    border: 1px solid #121212;
+}
+button {
+    cursor: pointer;
+    background-color: transparent;
     border: none;
 }
 td a:any-link {
     color: #000000;
 }
-#numeroSerie {
-    display: inline;
+td img {
+    width: 20px;
+}
+nav img {
+    width: 20%;
+}
+.add img {
+    width: 2%;
+}
+
+/* Estilos con ID */
+#salida {
+    color: red;
 }

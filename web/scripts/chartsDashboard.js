@@ -12,7 +12,7 @@ fetch("json_query.php?q=incidenciasAreasAbiertas")
 fetch("json_query.php?q=incidenciasAbiertas")
 .then((response) => response.json())
 .then((data) => {
-    crearGrafico(data, "doughnut", "incidenciasUrgentes", ["#ff4a4a", "#15a115"], "incidenciasUrgencia", false, false, false, false, true);
+    crearGrafico(data, "doughnut", "incidenciasUrgentes", ["#ff4a4a", "#609966"], "incidenciasUrgencia", false, false, false, false, true);
 })
 .catch((error) => {
     console.error("Error recuperando datos:", error);

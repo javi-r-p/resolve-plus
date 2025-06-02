@@ -47,14 +47,16 @@
                         unset($_SESSION['redireccion']);
                         header("Location: $redireccion");
                     } else {
-                        header("Location: support.php");
+                        header("Location: index.php");
                     }
                 } elseif ($usuarioBloqueado['bloqueado'] == 1) {
                     $error = "Acceso denegado";
                 }
+                mysqli_free_result($consultaUsuarioBloqueado);
             } else {
                 $error = "Credenciales incorrectas";
             }
+            mysqli_free_result($consulta);
         }
     }
     ?>

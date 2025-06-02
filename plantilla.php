@@ -12,24 +12,21 @@
 
     </script>
     <?php
-    
+
     ?>
 </head>
 <body>
-    <header>
+<header>
 
-    </header>
-    <nav>
-        
-    </nav>
-    <main>
+</header>
+<main>
 
-    </main>
-    <footer>
-        
-    </footer>
-    <?php
-        mysqli_close($bbdd);
-    ?>
+</main>
+<footer>
+    
+</footer>
+<?php
+    mysqli_close($bbdd);
+?>
 </body>
 </html>

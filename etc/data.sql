@@ -38,7 +38,91 @@ INSERT INTO usuarios VALUES
 (8, 8, 'Elena Díaz', 'ediaz', 'ediaz@saludvital.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', '956789008', 1),
 (9, 9, 'Pablo Ruiz', 'pruiz', 'pruiz@construccionesseguras.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', '900123009', 1),
 (10, 10, 'Carmen Moreno', 'cmoreno', 'cmoreno@deporteselite.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', '921234010', 1),
-(11, 11, 'Isabel Castro', 'icastro', 'icastro@agenciadeeventos.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', '921234050', 1);
+(11, 11, 'Isabel Castro', 'icastro', 'icastro@agenciadeeventos.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', '921234050', 1),
+(12, 0, 'Alberto Pérez Vela', 'aperez', 'aperez@resolveplus.es', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', '123456789', 0),
+(13, 0, 'Joaquín Campoy Cantero', 'jcampoy', 'jcampoy@resolveplus.es', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', '123456789', 0),
+(14, 1, 'Ana García Pérez', 'agarciaperez', 'agarciaperez@gourmetdelicias.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123456, 0),
+(15, 2, 'Pedro Rodríguez López', 'prodriguezlopez', 'prodriguezlopez@autorapido.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123457, 0),
+(16, 3, 'María Fernández Ruiz', 'mfernandezruiz', 'mfernandezruiz@ecohogar.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123458, 0),
+(17, 4, 'Javier González Martín', 'jgonzalezmartin', 'jgonzalezmartin@globalmoda.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123459, 0),
+(18, 5, 'Laura Jiménez Díaz', 'ljimenezdiaz', 'ljimenezdiaz@creativemedia.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123460, 0),
+(19, 6, 'Carlos Sánchez Castro', 'csanchezcastro', 'csanchezcastro@agrofinca.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123461, 0),
+(20, 7, 'Sofía Ruíz Torres', 'sruiztorres', 'sruiztorres@viajesfantasticos.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123462, 0),
+(21, 8, 'Diego Pérez Gómez', 'dperezgomez', 'dperezgomez@saludvital.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123463, 0),
+(22, 9, 'Elena Marín Herrera', 'emarinherrera', 'emarinherrera@construccionesseguras.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123464, 0),
+(23, 10, 'Miguel Ángel Navarro', 'mnavarro', 'mnavarro@deporteselite.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123465, 0),
+(24, 11, 'Carmen Romero Vargas', 'cromerovargas', 'cromerovargas@libreriaaurora.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123466, 0),
+(25, 12, 'Roberto Gil Expósito', 'rgilexposito', 'rgilexposito@jardinesencantados.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123467, 0),
+(26, 13, 'Isabel Ramos Castro', 'iramoscastro', 'iramoscastro@restaurantesdelicias.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123468, 0),
+(27, 14, 'Francisco Soler Vidal', 'fsolervidal', 'fsolervidal@muebleselegantes.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123469, 0),
+(28, 15, 'Cristina Heredia Soto', 'chereriasoto', 'chereriasoto@transportesrapidos.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123470, 0),
+(29, 16, 'Jorge Peña Gallardo', 'jpenagallardo', 'jpenagallardo@floristeriabellavida.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123471, 0),
+(30, 17, 'Nuria Vicente Luna', 'nvicenteluna', 'nvicenteluna@hotelparaisoazul.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123472, 0),
+(31, 18, 'Alejandro Lozano Molina', 'alozanomolina', 'alozanomolina@carnespremium.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123473, 0),
+(32, 19, 'Marina Salas Ferrer', 'msalasferrer', 'msalasferrer@arteydecoracion.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123474, 0),
+(33, 20, 'Rubén Pardo Blázquez', 'rpardoblazquez', 'rpardoblazquez@superfamilia.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123475, 0),
+(34, 1, 'Andrea Vega Sanz', 'avegasanz', 'avegasanz@gourmetdelicias.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123476, 0),
+(35, 2, 'Daniel Martín Cano', 'dmarciano', 'dmarciano@autorapido.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123477, 0),
+(36, 3, 'Sara Blanco Soto', 'sblancosoto', 'sblancosoto@ecohogar.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123478, 0),
+(37, 4, 'Pablo Cruz Fernández', 'pcruzfernandez', 'pcruzfernandez@globalmoda.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123479, 0),
+(38, 5, 'Lucía Gómez Romero', 'lgomezromero', 'lgomezromero@creativemedia.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123480, 0),
+(39, 6, 'Adrián Díaz Vargas', 'adiazvargas', 'adiazvargas@agrofinca.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123481, 0),
+(40, 7, 'Natalia Navarro García', 'nnagarci', 'nnagarci@viajesfantasticos.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123482, 0),
+(41, 8, 'Óscar Moreno Fernández', 'omfernandez', 'omfernandez@saludvital.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123483, 0),
+(42, 9, 'Clara Ruíz Morales', 'cruizmorales', 'cruizmorales@construccionesseguras.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123484, 0),
+(43, 10, 'Gonzalo Sanz Martínez', 'gsanzmartinez', 'gsanzmartinez@deporteselite.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123485, 0),
+(44, 11, 'Marta Núñez Castro', 'mnuñezcastro', 'mnuñezcastro@libreriaaurora.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123486, 0),
+(45, 12, 'Fernando Ramos Pérez', 'framosperez', 'framosperez@jardinesencantados.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123487, 0),
+(46, 13, 'Silvia Vega García', 'sveagarcia', 'sveagarcia@restaurantesdelicias.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123488, 0),
+(47, 14, 'Ricardo Soto Gómez', 'rsotogomez', 'rsotogomez@muebleselegantes.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123489, 0),
+(48, 15, 'Diana Prieto Ruíz', 'dprietoruiz', 'dprietoruiz@transportesrapidos.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123490, 0),
+(49, 16, 'Sergio Alonso Díaz', 'salonsodiaz', 'salonsodiaz@floristeriabellavida.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123491, 0),
+(50, 17, 'Beatriz Montes Sánchez', 'bmontessanchez', 'bmontessanchez@hotelparaisoazul.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123492, 0),
+(51, 18, 'Joaquín Torres Marín', 'jtorresmarin', 'jtorresmarin@carnespremium.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123493, 0),
+(52, 19, 'Eva Lozano Heredia', 'elozanoheredia', 'elozanoheredia@arteydecoracion.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123494, 0),
+(53, 20, 'Felipe Castro Pardo', 'fcastropardo', 'fcastropardo@superfamilia.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123495, 0),
+(54, 1, 'Inés Vargas Soler', 'ivargassoler', 'ivargassoler@gourmetdelicias.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123496, 0),
+(55, 2, 'Manuel Díaz Gil', 'mdiazgil', 'mdiazgil@autorapido.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123497, 0),
+(56, 3, 'Patricia Morales Moreno', 'pmoralesmoreno', 'pmoralesmoreno@ecohogar.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123498, 0),
+(57, 4, 'Ramón Guerrero Vega', 'rguerrerovega', 'rguerrerovega@globalmoda.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123499, 0),
+(58, 5, 'Vanesa Esteban Ramos', 'vestebanramos', 'vestebanramos@creativemedia.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123500, 0),
+(59, 6, 'Álvaro Martín Hernández', 'amartinhernandez', 'amartinhernandez@agrofinca.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123501, 0),
+(60, 7, 'Lorena Bravo Ruíz', 'lbravoruiz', 'lbravoruiz@viajesfantasticos.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123502, 0),
+(61, 8, 'Héctor Santos Morales', 'hsantosmorales', 'hsantosmorales@saludvital.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123503, 0),
+(62, 9, 'Teresa Domínguez Ferrer', 'tdominguezferrer', 'tdominguezferrer@construccionesseguras.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123504, 0),
+(63, 10, 'Vicente Robles Gil', 'vroblesgil', 'vroblesgil@deporteselite.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123505, 0),
+(64, 11, 'Rosario Expósito Marín', 'respositoarin', 'respositoarin@libreriaaurora.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123506, 0),
+(65, 12, 'Juanjo Vidal Soler', 'jvidalsoler', 'jvidalsoler@jardinesencantados.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123507, 0),
+(66, 13, 'Amelia López Prieto', 'alopezprieto', 'alopezprieto@restaurantesdelicias.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123508, 0),
+(67, 14, 'Arturo Gil Sánchez', 'agilsanchez', 'agilsanchez@muebleselegantes.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123509, 0),
+(68, 15, 'Cristina Vera Salas', 'cverasalas', 'cverasalas@transportesrapidos.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123510, 0),
+(69, 16, 'David Gallardo Blanco', 'dgallardoblanco', 'dgallardoblanco@floristeriabellavida.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123511, 0),
+(70, 17, 'Ismael Luna Vicente', 'ilunavicente', 'ilunavicente@hotelparaisoazul.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123512, 0),
+(71, 18, 'Lucía Molina Lozano', 'lmoliolozano', 'lmoliolozano@carnespremium.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123513, 0),
+(72, 19, 'Javier Ferrer Salas', 'jferrersalas', 'jferrersalas@arteydecoracion.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123514, 0),
+(73, 20, 'Sofía Blázquez Pardo', 'sblazquezpardo', 'sblazquezpardo@superfamilia.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123515, 0),
+(74, 1, 'Mario Sanz Vega', 'msanzvega', 'msanzvega@gourmetdelicias.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123516, 0),
+(75, 2, 'Laura Cano Martín', 'lcanomartin', 'lcanomartin@autorapido.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123517, 0),
+(76, 3, 'Ángel Soto Blanco', 'asotoblanco', 'asotoblanco@ecohogar.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123518, 0),
+(77, 4, 'Paula Fernández Cruz', 'pfernandezcruz', 'pfernandezcruz@globalmoda.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123519, 0),
+(78, 5, 'Marcos Romero Gómez', 'mromerogomez', 'mromerogomez@creativemedia.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123520, 0),
+(79, 6, 'Daniela Vargas Díaz', 'dvargasdiaz', 'dvargasdiaz@agrofinca.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123521, 0),
+(80, 7, 'Enrique García Navarro', 'egarcianavarro', 'egarcianavarro@viajesfantasticos.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123522, 0),
+(81, 8, 'Julia Hernández Moreno', 'jhernandezmoreno', 'jhernandezmoreno@saludvital.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123523, 0),
+(82, 9, 'Pablo Morales Ruíz', 'pmoralesruiz', 'pmoralesruiz@construccionesseguras.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123524, 0),
+(83, 10, 'Andrea Martínez Sanz', 'amartinezsanz', 'amartinezsanz@deporteselite.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123525, 0),
+(84, 11, 'Diego Castro Núñez', 'dcastronuñez', 'dcastronuñez@libreriaaurora.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123526, 0),
+(85, 12, 'Lucía Pérez Ramos', 'lperezramos', 'lperezramos@jardinesencantados.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123527, 0),
+(86, 13, 'Adrián García Vega', 'agarciavega', 'agarciavega@restaurantesdelicias.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123528, 0),
+(87, 14, 'Sofía Gómez Soto', 'sgomezsoto', 'sgomezsoto@muebleselegantes.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123529, 0),
+(88, 15, 'Miguel Díaz Prieto', 'mdiazprieto', 'mdiazprieto@transportesrapidos.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123530, 0),
+(89, 16, 'Cristina Alonso Gallardo', 'calonsogallardo', 'calonsogallardo@floristeriabellavida.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123531, 0),
+(90, 17, 'Jorge Sánchez Luna', 'jsanchezluna', 'jsanchezluna@hotelparaisoazul.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123532, 0),
+(91, 18, 'Nuria Lozano Molina', 'nlozanomolina', 'nlozanomolina@carnespremium.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123533, 0),
+(92, 19, 'Alejandro Salas Ferrer', 'asalasferrer', 'asalasferrer@arteydecoracion.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123534, 0),
+(93, 20, 'Marina Pardo Blázquez', 'mpardoblazquez', 'mpardoblazquez@superfamilia.com', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123535, 0),
+(94, 0, 'María Prueba Cero', 'mpruebacero', 'mpruebacero@resolveplus.es', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123536, 0),
+(95, 0, 'Carlos Prueba Uno', 'cpruebauno', 'cpruebauno@resolveplus.es', '0439434dae91c10c3bc073af1e76addf8f57a30ce0a7de0438b3aaad34b85200d41d01078f2ee786b3130b4ed4e39e3e26090da5d9f87420454dfdd182761cce', 600123537, 0);
 
 -- Tabla areas
 INSERT INTO areas VALUES
@@ -239,40 +323,28 @@ INSERT INTO incidenciasAreas (incidencia, area) VALUES
 (44, 2),
 (45, 4);
 
--- Tabla dispositivos, equipos, impresoras, moviles y red
--- Dispositivos y Equipos
+-- Tablas dispositivos, equipos, impresoras, moviles y red
+-- Dispositivos y equipos
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (2, 5, 'SNX789A2BC', 'PNX789A2BC', 'Dell', 'OptiPlex 7010');
 INSERT INTO equipos (id, servidorCliente, procesador, memoria, almacenamiento, sistema, tipo) VALUES (2, 0, 'Intel Core i5-12400', '16GB DDR4', '512GB NVMe SSD', 'Windows 11 Pro', 'Torre');
-
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (3, 12, 'SNHPPROB450', 'PNHPPROB450', 'HP', 'ProBook 450 G10');
 INSERT INTO equipos (id, servidorCliente, procesador, memoria, almacenamiento, sistema, tipo) VALUES (3, 0, 'AMD Ryzen 5 7530U', '16GB DDR4', '512GB PCIe NVMe SSD', 'Windows 11 Pro', 'Portátil');
-
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (4, 1, 'SNLENOVT14', 'PNLENOVT14', 'Lenovo', 'ThinkPad T14 Gen 4');
 INSERT INTO equipos (id, servidorCliente, procesador, memoria, almacenamiento, sistema, tipo) VALUES (4, 0, 'Intel Core i7-1355U', '32GB DDR5', '1TB NVMe SSD', 'Windows 11 Pro', 'Portátil');
-
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (5, 18, 'SNAPLMACMINI', 'PNAPLMACMINI', 'Apple', 'Mac Mini M2');
 INSERT INTO equipos (id, servidorCliente, procesador, memoria, almacenamiento, sistema, tipo) VALUES (5, 0, 'Apple M2', '8GB Unified Memory', '256GB SSD', 'macOS Sonoma', 'Mini PC');
-
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (6, 7, 'SNDELLSERV', 'PNDELLSERV', 'Dell', 'PowerEdge R660');
 INSERT INTO equipos (id, servidorCliente, procesador, memoria, almacenamiento, sistema, tipo) VALUES (6, 1, 'Intel Xeon Gold 5416S', '64GB DDR5 ECC', '2x 1TB NVMe SSD RAID1', 'VMware ESXi 8.0', 'Servidor Rack');
-
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (7, 15, 'SNMSILAP001', 'PNMSILAP001', 'MSI', 'Creator Z16');
 INSERT INTO equipos (id, servidorCliente, procesador, memoria, almacenamiento, sistema, tipo) VALUES (7, 0, 'Intel Core i9-13950HX', '32GB DDR5', '2TB NVMe SSD', 'Windows 11 Pro', 'Portátil');
-
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (8, 3, 'SNACERASPIRE', 'PNACERASPIRE', 'Acer', 'Aspire TC-1780');
 INSERT INTO equipos (id, servidorCliente, procesador, memoria, almacenamiento, sistema, tipo) VALUES (8, 0, 'Intel Core i5-13400', '16GB DDR4', '1TB HDD + 256GB SSD', 'Windows 11 Home', 'Torre');
-
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (9, 9, 'SNHPELITE800', 'PNHPELITE800', 'HP', 'EliteDesk 800 G9');
 INSERT INTO equipos (id, servidorCliente, procesador, memoria, almacenamiento, sistema, tipo) VALUES (9, 0, 'Intel Core i7-13700', '16GB DDR5', '512GB NVMe SSD', 'Ubuntu 22.04 LTS', 'Mini PC');
-
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (10, 20, 'SNASUSROG', 'PNASUSROG', 'ASUS', 'ROG Strix G16');
 INSERT INTO equipos (id, servidorCliente, procesador, memoria, almacenamiento, sistema, tipo) VALUES (10, 0, 'Intel Core i7-13650HX', '16GB DDR5', '1TB PCIe 4.0 SSD', 'Windows 11 Home', 'Portátil');
-
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (11, 2, 'SNLENOVOTC', 'PNLENOVOTC', 'Lenovo', 'ThinkCentre M70q');
 INSERT INTO equipos (id, servidorCliente, procesador, memoria, almacenamiento, sistema, tipo) VALUES (11, 0, 'Intel Core i3-12100T', '8GB DDR4', '256GB SSD M.2', 'Windows 10 Pro', 'Mini PC');
-
--- (Continuar con 40 más de Equipos, variando los datos)
--- ... (Ejemplos adicionales de Equipos)
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (12, 11, 'SNSRVHP001', 'PNSRVHP001', 'HP', 'ProLiant ML350 Gen10');
 INSERT INTO equipos (id, servidorCliente, procesador, memoria, almacenamiento, sistema, tipo) VALUES (12, 1, 'Intel Xeon Silver 4210R', '32GB ECC DDR4', '4TB SAS HDD', 'Windows Server 2022', 'Servidor Torre');
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (13, 6, 'SNAPPLEIMAC27', 'PNAPPLEIMAC27', 'Apple', 'iMac 27 Retina 5K');
@@ -293,8 +365,6 @@ INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, model
 INSERT INTO equipos (id, servidorCliente, procesador, memoria, almacenamiento, sistema, tipo) VALUES (20, 0, 'Intel Core i9-12900H', '32GB DDR5', '2TB NVMe SSD', 'Windows 11 Pro', 'Portátil');
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (21, 1, 'SNLENOVOLEGION', 'PNLENOVOLEGION', 'Lenovo', 'Legion Tower 5i');
 INSERT INTO equipos (id, servidorCliente, procesador, memoria, almacenamiento, sistema, tipo) VALUES (21, 0, 'Intel Core i5-13600K', '16GB DDR5', '512GB SSD + 1TB HDD', 'Windows 11 Home', 'Torre');
--- ... (Añadir 29 inserciones más para equipos para llegar a 50)
--- Placeholder for 29 more 'equipos'
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (22, 5, 'SNEQP22SRN', 'PNEQP22PRN', 'HP', 'OMEN 45L');
 INSERT INTO equipos (id, servidorCliente, procesador, memoria, almacenamiento, sistema, tipo) VALUES (22, 0, 'AMD Ryzen 7 7700X', '32GB DDR5', '1TB NVMe SSD', 'Windows 11 Pro', 'Torre');
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (23, 12, 'SNEQP23SRN', 'PNEQP23PRN', 'Dell', 'Inspiron 15');
@@ -357,24 +427,17 @@ INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, model
 INSERT INTO equipos (id, servidorCliente, procesador, memoria, almacenamiento, sistema, tipo) VALUES (51, 0, 'Intel Core i9-13950HX', '64GB DDR5 ECC', '2TB NVMe SSD', 'Windows 11 Pro WS', 'Portátil');
 
 
--- Dispositivos y Impresoras
+-- Dispositivos y dispositivos de impresión
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (52, 4, 'SNIMP001HP', 'PNIMP001HP', 'HP', 'LaserJet Pro M404n');
 INSERT INTO impresoras (id, velocidad, resolucion, metodoImpresion, color) VALUES (52, 1.5, 1200.0, 'Láser', 0);
-
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (53, 11, 'SNIMP002EPS', 'PNIMP002EPS', 'Epson', 'EcoTank ET-2800');
 INSERT INTO impresoras (id, velocidad, resolucion, metodoImpresion, color) VALUES (53, 0.5, 600.0, 'Inyección de tinta', 1);
-
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (54, 16, 'SNIMP003CAN', 'PNIMP003CAN', 'Canon', 'PIXMA G3270');
 INSERT INTO impresoras (id, velocidad, resolucion, metodoImpresion, color) VALUES (54, 0.4, 4800.0, 'Inyección de tinta', 1); -- Resolucion maxima de ejemplo.
-
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (55, 7, 'SNIMP004BRO', 'PNIMP004BRO', 'Brother', 'HL-L2390DW');
 INSERT INTO impresoras (id, velocidad, resolucion, metodoImpresion, color) VALUES (55, 1.2, 2400.0, 'Láser', 0);
-
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (56, 19, 'SNIMP005XER', 'PNIMP005XER', 'Xerox', 'B210');
 INSERT INTO impresoras (id, velocidad, resolucion, metodoImpresion, color) VALUES (56, 1.0, 600.0, 'Láser', 0);
-
--- (Continuar con 45 más de Impresoras, variando los datos)
--- ... (Ejemplos adicionales de Impresoras)
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (57, 2, 'SNIMP006HP', 'PNIMP006HP', 'HP', 'OfficeJet Pro 8025e');
 INSERT INTO impresoras (id, velocidad, resolucion, metodoImpresion, color) VALUES (57, 0.8, 1200.0, 'Inyección de tinta', 1);
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (58, 10, 'SNIMP007EPS', 'PNIMP007EPS', 'Epson', 'WorkForce Pro WF-3820');
@@ -395,8 +458,6 @@ INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, model
 INSERT INTO impresoras (id, velocidad, resolucion, metodoImpresion, color) VALUES (65, 0.6, 600.0, 'Inyección de tinta', 1);
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (66, 20, 'SNIMP015BRO', 'PNIMP015BRO', 'Brother', 'HL-L3270CDW');
 INSERT INTO impresoras (id, velocidad, resolucion, metodoImpresion, color) VALUES (66, 1.3, 2400.0, 'LED', 1);
--- ... (Añadir 35 inserciones más para impresoras para llegar a 50)
--- Placeholder for 35 more 'impresoras'
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (67, 4, 'SNIMP016ZEB', 'PNIMP016ZEB', 'Zebra', 'ZD421');
 INSERT INTO impresoras (id, velocidad, resolucion, metodoImpresion, color) VALUES (67, 2.0, 300.0, 'Térmica directa', 0);
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (68, 11, 'SNIMP017DYM', 'PNIMP017DYM', 'Dymo', 'LabelWriter 450');
@@ -469,24 +530,17 @@ INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, model
 INSERT INTO impresoras (id, velocidad, resolucion, metodoImpresion, color) VALUES (101, 0.3, 1200.0, 'Inyección de tinta', 1);
 
 
--- Dispositivos y Moviles
+-- Dispositivos y dispositivos móviles
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (102, 6, 'SNMOV001SAM', 'PNMOV001SAM', 'Samsung', 'Galaxy S23');
 INSERT INTO moviles (id, procesador, memoria, almacenamiento, sistema) VALUES (102, 'Snapdragon 8 Gen 2 for Galaxy', '8GB RAM', '256GB UFS 4.0', 'Android 14');
-
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (103, 14, 'SNMOV002APL', 'PNMOV002APL', 'Apple', 'iPhone 15 Pro');
 INSERT INTO moviles (id, procesador, memoria, almacenamiento, sistema) VALUES (103, 'Apple A17 Bionic', '8GB RAM', '256GB NVMe', 'iOS 17');
-
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (104, 10, 'SNMOV003GOO', 'PNMOV003GOO', 'Google', 'Pixel 8');
 INSERT INTO moviles (id, procesador, memoria, almacenamiento, sistema) VALUES (104, 'Google Tensor G3', '8GB RAM', '128GB UFS 3.1', 'Android 14');
-
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (105, 3, 'SNMOV004XIA', 'PNMOV004XIA', 'Xiaomi', '13T Pro');
 INSERT INTO moviles (id, procesador, memoria, almacenamiento, sistema) VALUES (105, 'MediaTek Dimensity 9200+', '12GB RAM', '512GB UFS 4.0', 'Android 13');
-
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (106, 18, 'SNMOV005ONE', 'PNMOV005ONE', 'OnePlus', '11');
 INSERT INTO moviles (id, procesador, memoria, almacenamiento, sistema) VALUES (106, 'Snapdragon 8 Gen 2', '16GB RAM', '256GB UFS 4.0', 'Android 13');
-
--- (Continuar con 45 más de Moviles, variando los datos)
--- ... (Ejemplos adicionales de Moviles)
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (107, 1, 'SNMOV006SAM', 'PNMOV006SAM', 'Samsung', 'Galaxy A54');
 INSERT INTO moviles (id, procesador, memoria, almacenamiento, sistema) VALUES (107, 'Exynos 1380', '6GB RAM', '128GB UFS 2.2', 'Android 14');
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (108, 9, 'SNMOV007APL', 'PNMOV007APL', 'Apple', 'iPhone SE (3rd gen)');
@@ -507,8 +561,6 @@ INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, model
 INSERT INTO moviles (id, procesador, memoria, almacenamiento, sistema) VALUES (115, 'Snapdragon 8 Gen 2', '12GB RAM', '256GB UFS 4.0', 'Android 13');
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (116, 7, 'SNMOV015ASU', 'PNMOV015ASU', 'ASUS', 'ROG Phone 7');
 INSERT INTO moviles (id, procesador, memoria, almacenamiento, sistema) VALUES (116, 'Snapdragon 8 Gen 2 for ROG', '16GB RAM', '512GB UFS 4.0', 'Android 13');
--- ... (Añadir 35 inserciones más para moviles para llegar a 50)
--- Placeholder for 35 more 'moviles'
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (117, 19, 'SNMOV016NOK', 'PNMOV016NOK', 'Nokia', 'G400 5G');
 INSERT INTO moviles (id, procesador, memoria, almacenamiento, sistema) VALUES (117, 'Snapdragon 480+ 5G', '4GB RAM', '64GB UFS 2.1', 'Android 12');
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (118, 4, 'SNMOV017HON', 'PNMOV017HON', 'Honor', 'Magic5 Pro');
@@ -581,24 +633,17 @@ INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, model
 INSERT INTO moviles (id, procesador, memoria, almacenamiento, sistema) VALUES (151, 'MediaTek Dimensity 9000+', '12GB RAM', '256GB UFS 3.1', 'Android 12');
 
 
--- Dispositivos y Red
+-- Dispositivos y dispositivos de red
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (152, 5, 'SNRED001CIS', 'PNRED001CIS', 'Cisco', 'Catalyst 9300');
 INSERT INTO red (id, producto, interfaces, velocidadMaxima) VALUES (152, 'Switch', 24, '10Gbps');
-
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (153, 12, 'SNRED002NET', 'PNRED002NET', 'Netgear', 'Nighthawk RAX50');
 INSERT INTO red (id, producto, interfaces, velocidadMaxima) VALUES (153, 'Router', 4, '5.4Gbps AX');
-
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (154, 18, 'SNRED003TPL', 'PNRED003TPL', 'TP-Link', 'Omada EAP660 HD');
 INSERT INTO red (id, producto, interfaces, velocidadMaxima) VALUES (154, 'Punto de acceso inalámbrico', 2, '3.6Gbps AX'); -- Interfaces LAN
-
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (155, 2, 'SNRED004UBI', 'PNRED004UBI', 'Ubiquiti', 'EdgeRouter X');
 INSERT INTO red (id, producto, interfaces, velocidadMaxima) VALUES (155, 'Router', 5, '1Gbps'); -- 5 puertos ethernet
-
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (156, 15, 'SNRED005DLK', 'PNRED005DLK', 'D-Link', 'DGS-1210-28MP');
 INSERT INTO red (id, producto, interfaces, velocidadMaxima) VALUES (156, 'Switch', 28, '1Gbps');
-
--- (Continuar con 45 más de Red, variando los datos)
--- ... (Ejemplos adicionales de Red)
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (157, 7, 'SNRED006ASU', 'PNRED006ASU', 'ASUS', 'RT-AX88U');
 INSERT INTO red (id, producto, interfaces, velocidadMaxima) VALUES (157, 'Router', 8, '6Gbps AX');
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (158, 1, 'SNRED007LIN', 'PNRED007LIN', 'Linksys', 'WRT3200ACM');
@@ -619,8 +664,6 @@ INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, model
 INSERT INTO red (id, producto, interfaces, velocidadMaxima) VALUES (165, 'Router', 6, '5.4Gbps AX');
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (166, 19, 'SNRED015Zyx', 'PNRED015Zyx', 'Zyxel', 'GS1900-24HP');
 INSERT INTO red (id, producto, interfaces, velocidadMaxima) VALUES (166, 'Switch', 24, '1Gbps PoE');
--- ... (Añadir 35 inserciones más para red para llegar a 50)
--- Placeholder for 35 more 'red'
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (167, 5, 'SNRED016CISCO', 'PNRED016CISCO', 'Cisco', 'ISR 4331');
 INSERT INTO red (id, producto, interfaces, velocidadMaxima) VALUES (167, 'Router', 4, '300Mbps');
 INSERT INTO dispositivos (id, empresa, numeroSerie, numeroProducto, marca, modelo) VALUES (168, 12, 'SNRED017NETGEAR', 'PNRED017NETGEAR', 'Netgear', 'GS308');
@@ -692,10 +735,8 @@ INSERT INTO red (id, producto, interfaces, velocidadMaxima) VALUES (200, 'Switch
 
 -- Extra
 UPDATE incidencias SET solucion = NULL, fechaCierre = NULL, desplazamiento = NULL, duracion = NULL WHERE estado = 1;
-INSERT INTO intervenciones VALUES (1, 3, 'Reinstalar servicio samba', '2025-05-27', '2025-05-27', '00:30');
-INSERT INTO intervenciones VALUES (2, 3, 'Almacenar las nuevas credenciales en todos los ordenadores de los usuarios', '2025-05-27', '2025-05-27', '02:00');
-INSERT INTO intervencionesTecnicos VALUES (1, 0, '', '1970-01-01', '1970-01-01', '00:00');
-INSERT INTO intervencionesTecnicos VALUES (2, 0, '', '1970-01-01', '1970-01-01', '00:00');
+INSERT INTO intervenciones VALUES (1, 0, 3, 'Reinstalar servicio samba', '2025-05-27', '2025-05-27', '00:30');
+INSERT INTO intervenciones VALUES (2, 0, 3, 'Almacenar las nuevas credenciales en todos los ordenadores de los usuarios', '2025-05-27', '2025-05-27', '02:00');
 UPDATE incidencias
 SET fechaCierre = '2025-05-27',
 	estado = 0,
@@ -703,5 +744,5 @@ SET fechaCierre = '2025-05-27',
     desplazamiento = 0,
     duracion = '02:30'
 WHERE id = 3;
-INSERT INTO dispositivos VALUES (201, 1, 'SRV00011', 'SRV01002', 'Dell', 'PowerEdge 160 4U');
+INSERT INTO dispositivos VALUES (201, 1, 'SRV00011', 'SRV01002', 'Dell', 'PowerEdge 160 4U', 2);
 INSERT INTO equipos VALUES (201, 1, 'Intel Xeon 6745P', '128GB DDR5 7000MHz ECC', '16 x 4TB HDD SAS 20K RPM', 'Windows server 2025 Datacenter', 'Rack', NULL);

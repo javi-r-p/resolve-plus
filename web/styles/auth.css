@@ -130,7 +130,6 @@ input::placeholder {
     display: block;
     position: relative;
     z-index: 1;
-    border-radius: 7px;
     overflow: hidden;
     margin: 0 auto;
 }
@@ -146,7 +145,15 @@ input::placeholder {
     padding: 0 20px;
     width: 100%;
     height: 40px;
-    background-color: #121212;
+    background-color: #222831;
+    border: 1px solid #222831;
+    transition: 0.25s;
+    border-radius: 7px;
+}
+.login100-form-btn:hover {
+    color: #222831;
+    background-color: #FFFFFF;
+    border: 1px solid #222831;
 }
 
 #visibilidadContrasenia {

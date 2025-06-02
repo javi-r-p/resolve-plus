@@ -1,0 +1,43 @@
+.charts {
+    width: 33%;
+    float: left;
+    border: none;
+}
+.charts p {
+    text-align: center;
+}
+.chartsStats {
+    width: 50%;
+}
+canvas {
+    width: 100%;
+    background-color: #FFFFFF;
+}
+.dataContainer {
+    display: flex;
+    border: none;
+}
+.data {
+    border: none;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.151);
+    width: 22.5%;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: smaller;
+}
+.data:nth-child(1) {
+    border-left: 0.25rem solid #ff4343;
+}
+.data:nth-child(2) {
+    border-left: 0.25rem solid #ff9d4c;
+}
+.data:nth-child(3) {
+    border-left: 0.25rem solid #ff4343;
+}
+.data:nth-child(4) {
+    border-left: 0.25rem solid #37a037;
+}
+.numbers {
+    font-size: 2rem;
+    display: block;
+}

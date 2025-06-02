@@ -47,10 +47,17 @@ function mostrarContrasenia (tipo) {
         entrada.type = "password";
     }
 }
-function crearNombreUsuario () {
+function crearNombreUsuario (contrasenia, tecnico = false) {
     var correoElectronico = document.getElementById("correoElectronico").value;
-    var nombreUsuario = correoElectronico.split("@")[0];
-    document.getElementById("nombreUsuario").value = nombreUsuario;
+    var nombre = correoElectronico.split("@")[0];
+    if (tecnico) {
+        document.getElementById("nombreTecnico").value = nombre;
+    } else {
+        document.getElementById("nombreUsuario").value = nombre;
+    }
+    if (contrasenia) {
+        document.getElementById("contrasenia").value = nombre;
+    }
 }
 function mostrarContrasenias (tipo) {
     var imagen = document.getElementById("visibilidadContrasenia");
@@ -86,9 +93,9 @@ function compararContrasenias() {
     var enviarContrasenia = document.getElementById("enviarContrasenia");
     if (contrasenia.value != contrasenia2.value) {
         salida.innerHTML = "Las contraseñas no coinciden."
-        enviarContrasenia.classList.add("hidden");
+        enviarContrasenia.disabled = true;
     } else {
         salida.innerHTML = ""
-        enviarContrasenia.classList.remove("hidden");
+        enviarContrasenia.disabled = false;
     }
 }

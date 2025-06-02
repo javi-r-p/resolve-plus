@@ -1,5 +1,6 @@
 <?php
     require("../../etc/config.php");
+    require_once("../../etc/sessionTec.php");
     $json = [];
     if ($_GET['q'] == "incidenciasAreasAbiertas") {
         $consulta = mysqli_query($bbdd, "SELECT a.denominacion, COUNT(ia.incidencia) AS 'conteo' FROM areas a JOIN incidenciasAreas ia ON a.id = ia.area JOIN incidencias i ON ia.incidencia = i.id WHERE i.estado = 1 GROUP BY a.denominacion");
@@ -14,7 +15,7 @@
     } elseif ($_GET['q'] == "incidenciasDispositivo") {
         $consulta = mysqli_query($bbdd, "SELECT 'red' AS 'denominacion', COUNT(*) AS 'conteo' FROM red r JOIN dispositivosIncidencias id ON r.id = id.dispositivo UNION ALL SELECT 'equipos', COUNT(*) FROM equipos e JOIN dispositivosIncidencias id ON e.id = id.dispositivo UNION ALL SELECT 'impresoras', COUNT(*) FROM impresoras i JOIN dispositivosIncidencias id ON i.id = id.dispositivo UNION ALL SELECT 'moviles', COUNT(*) FROM moviles m JOIN dispositivosIncidencias id ON m.id = id.dispositivo UNION ALL SELECT 'otros', COUNT(*)  FROM otros o JOIN dispositivosIncidencias id ON o.id = id.dispositivo");
     } elseif ($_GET['q'] == "incidenciasDispositivoAbiertas") {
-        $consulta = mysqli_query($bbdd, "SELECT 'red' AS denominacion, COUNT(*) AS conteo FROM red r JOIN dispositivosIncidencias id ON r.id = id.dispositivo JOIN incidencias ic ON id.incidencia = ic.id WHERE ic.estado = 1 UNION ALL SELECT 'equipos', COUNT(*) FROM equipos e JOIN dispositivosIncidencias id ON e.id = id.dispositivo JOIN incidencias ic ON id.incidencia = ic.id WHERE ic.estado = 1 UNION ALL SELECT 'impresoras', COUNT(*) FROM impresoras i JOIN dispositivosIncidencias id ON i.id = id.dispositivo JOIN incidencias ic ON id.incidencia = ic.id WHERE ic.estado = 1 UNION ALL SELECT 'moviles', COUNT(*) FROM moviles m JOIN dispositivosIncidencias id ON m.id = id.dispositivo JOIN incidencias ic ON id.incidencia = ic.id WHERE ic.estado = 1 UNION ALL SELECT 'otros', COUNT(*) FROM otros o JOIN dispositivosIncidencias id ON o.id = id.dispositivo JOIN incidencias ic ON id.incidencia = ic.id WHERE ic.estado = 1;");
+        $consulta = mysqli_query($bbdd, "SELECT 'red' AS denominacion, COUNT(*) AS conteo FROM red r JOIN dispositivosIncidencias id ON r.id = id.dispositivo JOIN incidencias ic ON id.incidencia = ic.id WHERE ic.estado = 1 UNION ALL SELECT 'equipos', COUNT(*) FROM equipos e JOIN dispositivosIncidencias id ON e.id = id.dispositivo JOIN incidencias ic ON id.incidencia = ic.id WHERE ic.estado = 1 UNION ALL SELECT 'impresoras', COUNT(*) FROM impresoras i JOIN dispositivosIncidencias id ON i.id = id.dispositivo JOIN incidencias ic ON id.incidencia = ic.id WHERE ic.estado = 1 UNION ALL SELECT 'moviles', COUNT(*) FROM moviles m JOIN dispositivosIncidencias id ON m.id = id.dispositivo JOIN incidencias ic ON id.incidencia = ic.id WHERE ic.estado = 1 UNION ALL SELECT 'otros', COUNT(*) FROM otros o JOIN dispositivosIncidencias id ON o.id = id.dispositivo JOIN incidencias ic ON id.incidencia = ic.id WHERE ic.estado = 1");
     } else {
         echo "Parámetros no válidos";
         die();

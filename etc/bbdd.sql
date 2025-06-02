@@ -21,7 +21,7 @@ CREATE TABLE usuarios (
     nombre VARCHAR(150) NOT NULL,
     nombreUsuario VARCHAR(20) NOT NULL UNIQUE,
     correo VARCHAR(50) NOT NULL UNIQUE,
-    contrasenia VARCHAR(256) NOT NULL,
+    contrasenia VARCHAR(512) NOT NULL,
     telefono INT UNSIGNED NOT NULL,
     bloqueado BOOLEAN NOT NULL DEFAULT 0, -- Si no está bloqueado 0, si lo está, 1
     CONSTRAINT PK_usuarios PRIMARY KEY (id),
@@ -36,6 +36,7 @@ CREATE TABLE dispositivos (
     numeroProducto VARCHAR(30) NOT NULL,
     marca VARCHAR(20) NOT NULL,
     modelo VARCHAR(30) NOT NULL,
+    activo BOOLEAN NOT NULL DEFAULT 1,
     CONSTRAINT PK_dispositivos PRIMARY KEY (id),
     CONSTRAINT FK_dispositivosEmpresa FOREIGN KEY (empresa) REFERENCES empresas (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
@@ -108,7 +109,7 @@ CREATE TABLE tecnicos (
     nombre VARCHAR(150) NOT NULL,
 	nombreUsuario VARCHAR(20),
     correo VARCHAR(50) NOT NULL,
-    contrasenia VARCHAR(256) NOT NULL,
+    contrasenia VARCHAR(512) NOT NULL,
     telefono INT UNSIGNED NOT NULL,
     bloqueado BOOLEAN NOT NULL,
     CONSTRAINT PK_tecnicos PRIMARY KEY (id)
@@ -116,8 +117,8 @@ CREATE TABLE tecnicos (
 
 -- Tabla areasTecnicos
 CREATE TABLE areasTecnicos (
-	area TINYINT UNSIGNED NOT NULL,
-    tecnico SMALLINT UNSIGNED NOT NULL,
+	area TINYINT UNSIGNED,
+    tecnico SMALLINT UNSIGNED,
     CONSTRAINT PK_areasTecnicos PRIMARY KEY (area, tecnico),
     CONSTRAINT FK_areasTecnicosArea FOREIGN KEY (area) REFERENCES areas (id) ON UPDATE CASCADE ON DELETE CASCADE,
     CONSTRAINT FK_areasTecnicosTecnico FOREIGN KEY (tecnico) REFERENCES tecnicos (id) ON UPDATE CASCADE ON DELETE CASCADE
@@ -126,7 +127,7 @@ CREATE TABLE areasTecnicos (
 -- Tabla incidencias
 CREATE TABLE incidencias (
 	id INT UNSIGNED NOT NULL,
-    usuario INT UNSIGNED NOT NULL,
+    usuario INT UNSIGNED,
     descripcion VARCHAR(1000) NOT NULL,
     urgente BOOLEAN, -- Si no es urgente 0, si lo es 1
     fechaApertura DATE NOT NULL,
@@ -137,13 +138,13 @@ CREATE TABLE incidencias (
     desplazamiento BOOLEAN, -- Si no hay desplazamiento es 0, si lo hay es 1
     duracion TIME,
     CONSTRAINT PK_incidencias PRIMARY KEY (id),
-    CONSTRAINT FK_incidenciasUsuario FOREIGN KEY (usuario) REFERENCES usuarios (id) ON UPDATE CASCADE ON DELETE CASCADE
+    CONSTRAINT FK_incidenciasUsuario FOREIGN KEY (usuario) REFERENCES usuarios (id) ON UPDATE CASCADE ON DELETE SET NULL
 );
 
 -- Tabla incidenciasAreas
 CREATE TABLE incidenciasAreas (
-	incidencia INT UNSIGNED NOT NULL,
-    area TINYINT UNSIGNED NOT NULL,
+	incidencia INT UNSIGNED,
+    area TINYINT UNSIGNED,
     CONSTRAINT PK_incidenciasAreas PRIMARY KEY (incidencia, area),
     CONSTRAINT FK_incidenciasAreasIncidencia FOREIGN KEY (incidencia) REFERENCES incidencias (id) ON UPDATE CASCADE ON DELETE CASCADE,
     CONSTRAINT FK_incidenciasAreasArea FOREIGN KEY (area) REFERENCES areas (id) ON UPDATE CASCADE ON DELETE CASCADE
@@ -154,31 +155,20 @@ CREATE TABLE dispositivosIncidencias (
 	dispositivo INT UNSIGNED NOT NULL,
     incidencia INT UNSIGNED NOT NULL,
     CONSTRAINT PK_dispositivosIncidencias PRIMARY KEY (dispositivo, incidencia),
-    CONSTRAINT FK_dispositivosIncidenciasDispositivo FOREIGN KEY (dispositivo) REFERENCES dispositivos (id) ON UPDATE CASCADE ON DELETE CASCADE,
-    CONSTRAINT FK_dispositivosIncidenciasIncidencia FOREIGN KEY (incidencia) REFERENCES incidencias (id) ON UPDATE CASCADE ON DELETE CASCADE
+    CONSTRAINT FK_dispositivosIncidenciasDispositivo FOREIGN KEY (dispositivo) REFERENCES dispositivos (id) ON UPDATE CASCADE,
+    CONSTRAINT FK_dispositivosIncidenciasIncidencia FOREIGN KEY (incidencia) REFERENCES incidencias (id) ON UPDATE CASCADE
 );
 
 -- Tabla intervenciones
 CREATE TABLE intervenciones (
 	id INT UNSIGNED NOT NULL,
-    incidencia INT UNSIGNED NOT NULL,
+    tecnico SMALLINT UNSIGNED,
+    incidencia INT UNSIGNED,
     descripcion VARCHAR(2000) NOT NULL,
 	fechaInicio DATE NOT NULL,
     fechaFin DATE,
     duracion TIME,
     CONSTRAINT PK_intervenciones PRIMARY KEY (id),
-    CONSTRAINT FK_intervencionesIncidencia FOREIGN KEY (incidencia) REFERENCES incidencias (id)
-);
-
--- Tabla intervencionesTecnicos
-CREATE TABLE intervencionesTecnicos (
-	intervencion INT UNSIGNED NOT NULL,
-    tecnico SMALLINT UNSIGNED NOT NULL,
-    descripcion VARCHAR(2000) NOT NULL,
-	fechaInicio DATE NOT NULL,
-    fechaFin DATE,
-    duracion TIME,
-    CONSTRAINT PK_intervencionesTecnicos PRIMARY KEY (intervencion, tecnico),
-    CONSTRAINT FK_intervencionesTecnicosIncidencia FOREIGN KEY (intervencion) REFERENCES intervenciones (id),
-    CONSTRAINT FK_intervencionesTecnicosTecnico FOREIGN KEY (tecnico) REFERENCES tecnicos (id)
+    CONSTRAINT FK_intervencionesIncidencia FOREIGN KEY (incidencia) REFERENCES incidencias (id) ON UPDATE CASCADE,
+    CONSTRAINT FK_intervnecionesTecnico FOREIGN KEY (tecnico) REFERENCES tecnicos (id) ON UPDATE CASCADE ON DELETE SET NULL
 );

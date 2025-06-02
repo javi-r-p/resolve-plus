@@ -1,0 +1,102 @@
+/* Selectores */
+div input, div select {
+    height: 10%;
+    background-color: transparent;
+    border: 0.5px solid #555555;
+    margin: 0.3%;
+    padding: 5px;
+    left: 27.5%;
+    width: 45%;
+    position: relative;
+}
+div input::placeholder {
+    color: #000000;
+}
+div input[type=submit] {
+    border: 1px solid #64b5f6;
+    background-color: #64b5f6;
+    color: #FFFFFF;
+}
+div input[type=submit]:hover {
+    border: 1px solid #000000;
+    background-color: transparent;
+    color: #000000;
+}
+div input[type=checkbox] {
+    width: 5%;
+}
+div textarea {
+    width: 100%;
+    height: fit-content;
+}
+input, select, textarea {
+    border: 1px solid #000000;
+    border-radius: 5px;
+    width: 10%;
+    height: 3%;
+}
+input[type=submit] {
+    background-color: #000000;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+}
+textarea::placeholder {
+    font-family: figtree, Arial, Helvetica, sans-serif;
+}
+fieldset {
+    border: none;
+}
+td input {
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+}
+
+/* Clases */
+.check {
+    left: 0;
+    width: 45%;
+    position: relative;
+    border-radius: 5px;
+}
+.check input[type=checkbox] {
+    vertical-align: middle;
+}
+.filter {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.confirmar input {
+    width: 22.5%;
+    height: fit-content;
+    margin: auto 0;
+}
+.smallForm {
+    border: 1px solid #222831;
+    border-radius: 7px;
+    width: 30%;
+    padding: 10px;
+}
+.smallForm input, .smallForm textarea {
+    width: auto;
+    height: auto;
+    left: 0;
+}
+.smallForm textarea {
+    width: 75%;
+    height: 15%;
+}
+.smallForm label {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+/* ID */
+#visibilidadContrasenia, #visibilidadContrasenia2 {
+    width: 1%;
+    cursor: pointer;
+    position: relative;
+}
