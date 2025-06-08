@@ -16,92 +16,48 @@ body {
 }
 
 /* Estilos de disposición de la página */
-footer, header, main {
-    width: 90%;
-    float: right;
-}
-header, nav, footer {
+nav {
     background-color: #222831;
     color: #FFFFFF;
-}
-header {
-    padding: 20px;
-    top: 0;
-    right: 0;
-    display: block;
-    transition: 0.4s;
-    font-size: 1rem;
-    text-align: center;
-}
-header button, header a:any-link, header a {
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: medium;
-}
-header a:any-link:hover, header a:hover {
-    color: #FFFFFF;
-    text-decoration: underline;
+    width: 99%;
+    border-radius: 7px;
+    margin: 0.5%
 }
 nav {
-    width: 10%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    padding-top: 4%;
+    padding: 1.25%;
+    overflow: hidden;
 }
 nav a:any-link, nav a {
     text-decoration: none;
-    display: block;
     color: inherit;
-	padding: 4% 2% 4% 8%;
+    padding: 1%;
+    vertical-align: middle;
 }
 nav a:any-link:hover, nav a:hover {
     text-decoration: underline;
 }
-nav p {
-    padding: 5% 2% 5% 8%;
-}
-nav hr {
-    border: 1px solid #FFFFFF;
-    margin: 5%;
-}
-.sameType {
-    margin: 5% 10% 5% 10%;
-}
-footer {
-    text-align: center;
-    padding: 10px;
-    bottom: 0;
-    right: 0;
-    clear: both;
-}
-footer p {
-    text-align: center;
-    font-size: large;
-    display: inline;
+nav img {
+    max-width: 2%;
     vertical-align: middle;
 }
-footer button {
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    margin-left: 0.2%;
-    margin-right: 0.2%;
+footer {
+    display: block;
+    width: 100%;
+    clear: both;
 }
-footer a img {
+footer img {
     width: 2.5%;
     vertical-align: middle;
     float: right;
+}
+footer a:any-link {
+    color: #FFFFFF;
 }
 
 /* Encabezados, tablas e imágenes */
 /* Encabezados */
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
-    display: inline;
-    margin: auto;
 }
 h4 a:any-link {
     color: black;
@@ -163,26 +119,18 @@ img {
 
 /* .view se utiliza para las ventanas emergentes */
 .view {
-    z-index: 1;
-    background-color: #F2F2FF;
     box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.253);
-    border-radius: 5px;
-    margin: 0 auto;
-    margin-top: 10%;
-    padding: 1%;
-    position: fixed;
-    right: 30%;
-    left: 30%;
-    height: 35%;
-    overflow-y: auto;
+    width: 60%;
+    margin: 2% auto 2% auto;
+    padding: 10px;
+    border-radius: 7px;
 }
 .view p a:any-link {
     color: #000000;
 }
 .view img {
-    width: 30%;
     position: relative;
-    margin-right: 0;
+    right: 0;
 }
 /* .eliminar se utiliza para las ventanas de confirmación de eliminación */
 .eliminar {
@@ -219,6 +167,9 @@ img {
 .viewFullIssue section {
     border-radius: 7px;
     border: 1px solid #222831;
+}
+.viewFullIssue h1, .viewFullIssue h2, .viewFullIssue h3, .viewFullIssue h4, .viewFullIssue h5, .viewFullIssue h6 {
+    text-align: left;
 }
 
 /* Otras clases */
@@ -258,6 +209,35 @@ img {
 .w-80 {
     width: 80%;
 }
+.no-border {
+    border: none;
+}
+.active {
+    font-weight: bolder;
+}
+.error {
+    color: #FF6666;
+    font-weight: bold;
+}
+.ok {
+    color: #3CB371;
+    font-weight: bold;
+}
+.inputImage {
+    cursor: pointer;
+    width: 22px;
+}
+.add {
+    color: #000000;
+    text-decoration: none;
+    border: 1px solid #000000;
+    border-radius: 7px;
+    padding: 10px;
+    margin: 1%;
+}
+.add a:any-link:hover {
+    text-decoration: underline;
+}
 
 /* Estilos con selectores CSS */
 section {
@@ -291,4 +271,10 @@ nav img {
 /* Estilos con ID */
 #salida {
     color: red;
+}
+#serial {
+    width: 50%;
+}
+#formDivision {
+    display: none;
 }

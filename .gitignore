@@ -1,5 +1,9 @@
 web.config
 .well-known
-phpmailer/sendmail.php
 .vscode
 etc/queries.sql
+etc/session.php
+etc/sessionTec.php
+phpmailer/credentials.php
+bin
+bin/install.sh

@@ -19,7 +19,6 @@ CREATE TABLE usuarios (
 	id INT UNSIGNED NOT NULL,
     empresa SMALLINT UNSIGNED NOT NULL,
     nombre VARCHAR(150) NOT NULL,
-    nombreUsuario VARCHAR(20) NOT NULL UNIQUE,
     correo VARCHAR(50) NOT NULL UNIQUE,
     contrasenia VARCHAR(512) NOT NULL,
     telefono INT UNSIGNED NOT NULL,
@@ -107,11 +106,10 @@ CREATE TABLE areas (
 CREATE TABLE tecnicos (
 	id SMALLINT UNSIGNED NOT NULL,
     nombre VARCHAR(150) NOT NULL,
-	nombreUsuario VARCHAR(20),
     correo VARCHAR(50) NOT NULL,
     contrasenia VARCHAR(512) NOT NULL,
     telefono INT UNSIGNED NOT NULL,
-    bloqueado BOOLEAN NOT NULL,
+    bloqueado BOOLEAN NOT NULL DEFAULT 0, -- Si no está bloqueado 0, si lo está, 1
     CONSTRAINT PK_tecnicos PRIMARY KEY (id)
 );
 
@@ -148,15 +146,6 @@ CREATE TABLE incidenciasAreas (
     CONSTRAINT PK_incidenciasAreas PRIMARY KEY (incidencia, area),
     CONSTRAINT FK_incidenciasAreasIncidencia FOREIGN KEY (incidencia) REFERENCES incidencias (id) ON UPDATE CASCADE ON DELETE CASCADE,
     CONSTRAINT FK_incidenciasAreasArea FOREIGN KEY (area) REFERENCES areas (id) ON UPDATE CASCADE ON DELETE CASCADE
-);
-
--- Tabla dispositivosIncidencias
-CREATE TABLE dispositivosIncidencias (
-	dispositivo INT UNSIGNED NOT NULL,
-    incidencia INT UNSIGNED NOT NULL,
-    CONSTRAINT PK_dispositivosIncidencias PRIMARY KEY (dispositivo, incidencia),
-    CONSTRAINT FK_dispositivosIncidenciasDispositivo FOREIGN KEY (dispositivo) REFERENCES dispositivos (id) ON UPDATE CASCADE,
-    CONSTRAINT FK_dispositivosIncidenciasIncidencia FOREIGN KEY (incidencia) REFERENCES incidencias (id) ON UPDATE CASCADE
 );
 
 -- Tabla intervenciones

@@ -22,6 +22,16 @@ div input[type=submit]:hover {
     background-color: transparent;
     color: #000000;
 }
+div input[type=reset] {
+    border: 1px solid #ff4a4a;
+    background-color: #ff4a4a;
+    color: #FFFFFF;
+}
+div input[type=reset]:hover {
+    border: 1px solid #000000;
+    background-color: transparent;
+    color: #000000;
+}
 div input[type=checkbox] {
     width: 5%;
 }
@@ -34,8 +44,9 @@ input, select, textarea {
     border-radius: 5px;
     width: 10%;
     height: 3%;
+    transition: 0.05s;
 }
-input[type=submit] {
+input[type=submit], input[type=reset] {
     background-color: #000000;
     color: #FFFFFF;
     cursor: pointer;
@@ -46,6 +57,10 @@ textarea::placeholder {
 }
 fieldset {
     border: none;
+}
+textarea {
+    font-size: medium;
+    font-family: figtree, Arial, Helvetica, sans-serif;;
 }
 td input {
     text-align: center;
@@ -62,36 +77,77 @@ td input {
 }
 .check input[type=checkbox] {
     vertical-align: middle;
+    width: 20%;
 }
 .filter {
     display: flex;
     width: 100%;
     justify-content: space-evenly;
 }
+.filter a {
+    background-color: #609966;
+    text-decoration: none;
+}
 .confirmar input {
     width: 22.5%;
-    height: fit-content;
     margin: auto 0;
 }
 .smallForm {
+    width: 30%;
     border: 1px solid #222831;
     border-radius: 7px;
-    width: 30%;
+}
+.mediumForm {
+    width: 50%;
+}
+.bigForm {
+    width: 97.5%;
+}
+.smallForm, .mediumForm, .bigForm {
     padding: 10px;
 }
-.smallForm input, .smallForm textarea {
+.smallForm input, .mediumForm input, .bigForm input, .smallForm select, .mediumForm select, .bigForm input {
     width: auto;
     height: auto;
     left: 0;
+    margin-bottom: 1%;
 }
-.smallForm textarea {
+.mediumForm input, .mediumForm textarea, .mediumForm select, .bigForm input, .bigForm textarea, .bigForm select {
+    border: 1px solid #B8B8B8;
+}
+.mediumForm input:focus:not([type=checkbox]), .mediumForm textarea:focus, .bigForm input:focus:not([type=checkbox]), .bigForm textarea:focus {
+    outline: 4px solid #60A5FA;
+}
+.mediumForm select:focus, .bigForm select:focus {
+    border: 1px solid #60A5FA;
+    outline: none;
+}
+.mediumForm textarea, .bigForm textarea {
     width: 75%;
-    height: 15%;
 }
-.smallForm label {
+.smallForm label, .mediumForm label, .bigForm label {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+}
+.mediumForm fieldset, .bigForm fieldset {
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 7px;
+}
+.mediumForm fieldset textarea, .bigForm fieldset textarea {
+    width: 100%;
+    resize: none;
+}
+.mediumForm legend, .bigForm legend {
+    text-align: center;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.alignedForms {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5%;
 }
 
 /* ID */
